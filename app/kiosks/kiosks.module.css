@@ -1,0 +1,188 @@
+.kiosksPage :global(.search-container) {
+  max-width: 520px;
+  margin: 0 auto var(--space-8);
+  position: relative;
+}
+
+.kiosksPage :global(.search-input) {
+  width: 100%;
+  padding: var(--space-4) var(--space-16) var(--space-4) var(--space-6);
+  font-size: var(--font-size-base);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.kiosksPage :global(.search-input):focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent-glow);
+}
+
+.kiosksPage :global(.search-btn) {
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-gold);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 8px rgba(149, 109, 31, 0.2);
+}
+
+.kiosksPage :global(.search-btn):hover {
+  box-shadow: 0 4px 12px rgba(149, 109, 31, 0.3);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.kiosksPage :global(.filters) {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.kiosksPage :global(.filter-chip) {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.kiosksPage :global(.filter-chip):hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.kiosksPage :global(.filter-chip.active) {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.kiosksPage :global(.kiosk-layout) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .kiosksPage :global(.kiosk-layout) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.kiosksPage :global(.map-container) {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  height: 560px;
+}
+
+.kiosksPage :global(.map-placeholder) {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: rgba(250, 248, 244, 0.3);
+}
+
+.kiosksPage :global(.results-container) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.kiosksPage :global(.kiosk-card) {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+  transition: all var(--transition-slow);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.kiosksPage :global(.kiosk-card):hover {
+  box-shadow: var(--shadow-card);
+  border-color: rgba(149, 109, 31, 0.12);
+  transform: translateY(-2px);
+}
+
+.kiosksPage :global(.kiosk-info) { flex: 1; }
+.kiosksPage :global(.kiosk-info) h4 { margin-bottom: var(--space-2); }
+
+.kiosksPage :global(.kiosk-meta) {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.kiosksPage :global(.badge) {
+  display: inline-block;
+  padding: 2px var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  background: var(--color-background);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-full);
+}
+
+.kiosksPage :global(.distance) {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+}
+
+.kiosksPage :global(.kiosk-actions) {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .kiosksPage :global(.map-container) {
+    position: static;
+    height: 280px;
+  }
+
+  .kiosksPage :global(.kiosk-card) {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .kiosksPage :global(.kiosk-actions) {
+    width: 100%;
+  }
+
+  .kiosksPage :global(.kiosk-actions) :global(.btn) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .kiosksPage :global(.search-input) {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,707 @@
+/* ============================================
+   RESULTS PAGE — Page-Specific Styles
+   All design tokens sourced from globals.css
+   ============================================ */
+
+.resultsPage {
+    padding-top: 80px;
+    background: var(--color-background);
+    min-height: 100vh;
+}
+
+/* ============================================
+   1. REPORT HEADER
+   ============================================ */
+
+.reportHeader {
+    background: var(--gradient-dark);
+    padding: var(--space-16) 0 var(--space-12);
+    position: relative;
+    overflow: hidden;
+}
+
+.reportHeader::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(149, 109, 31, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.reportHeaderInner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.reportMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.metaChip {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 244, 0.45);
+}
+
+.metaDivider {
+    width: 4px;
+    height: 4px;
+    background: rgba(250, 248, 244, 0.2);
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.reportScanId {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-inverse);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.reportFooterRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+}
+
+/* Source tag */
+.sourceTag {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: var(--space-1) var(--space-4);
+    border-radius: var(--radius-full);
+    background: rgba(149, 109, 31, 0.12);
+    border: 1px solid rgba(149, 109, 31, 0.22);
+    color: #C4973A;
+}
+
+/* Severity pill — sizes up depending on severity */
+.severityPill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.severityPillLow {
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--color-success);
+    border: 1px solid rgba(22, 163, 74, 0.25);
+}
+
+.severityPillModerate {
+    background: rgba(202, 138, 4, 0.12);
+    color: #92640F;
+    border: 1px solid rgba(202, 138, 4, 0.28);
+}
+
+.severityPillHigh {
+    background: rgba(220, 38, 38, 0.14);
+    color: var(--color-error);
+    border: 1px solid rgba(220, 38, 38, 0.28);
+}
+
+.severityDot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.severityDotLow {
+    background: var(--color-success);
+}
+
+.severityDotMod {
+    background: #92640F;
+}
+
+.severityDotHigh {
+    background: var(--color-error);
+}
+
+/* ============================================
+   2. SCAN IMAGE PANEL
+   ============================================ */
+
+.scanPanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .scanPanel {
+        grid-template-columns: 1fr;
+    }
+}
+
+.scanImageWrap {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: var(--color-primary-light);
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scanImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    color: rgba(250, 248, 244, 0.18);
+    background: linear-gradient(135deg, #1A1714 0%, #272320 100%);
+}
+
+.scanImageIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-xl);
+    border: 1.5px solid rgba(149, 109, 31, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scanImageLabel {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.scanImageOverlay {
+    position: absolute;
+    bottom: var(--space-4);
+    left: var(--space-4);
+    right: var(--space-4);
+    background: rgba(26, 23, 20, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.overlayDot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-success);
+    flex-shrink: 0;
+}
+
+.overlayText {
+    font-size: var(--font-size-xs);
+    color: rgba(250, 248, 244, 0.7);
+    letter-spacing: 0.06em;
+}
+
+/* Scan metadata grid */
+.scanMeta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.scanMetaItem {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.scanMetaItem:last-child {
+    border-bottom: none;
+}
+
+.scanMetaLabel {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.scanMetaValue {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+/* ============================================
+   3. DIFFERENTIAL DIAGNOSIS
+   ============================================ */
+
+.diagnosisSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+/* Primary card */
+.primaryDiagCard {
+    position: relative;
+    overflow: hidden;
+}
+
+.primaryDiagCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.primaryLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+}
+
+.primaryLabel::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background: var(--gradient-gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+.conditionName {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+}
+
+/* Confidence bar */
+.confidenceRow {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+}
+
+.confidenceLabel {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.confidenceTrack {
+    flex: 1;
+    height: 6px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.confidenceFill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    background: var(--gradient-gold);
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.confidenceFillMuted {
+    background: var(--color-border-warm);
+}
+
+.confidencePercent {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+    min-width: 44px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.confidencePercentMuted {
+    color: var(--color-text-secondary);
+}
+
+/* Description */
+.diagDescription {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+/* Characteristics list */
+.charLabel {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-3);
+}
+
+.charList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+}
+
+.charItem {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-relaxed);
+}
+
+.charBullet {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+    background: var(--color-accent);
+    flex-shrink: 0;
+    margin-top: 7px;
+}
+
+.prevalenceNote {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-family: var(--font-family-accent);
+    font-style: italic;
+    padding: var(--space-3) var(--space-4);
+    border-left: 2px solid var(--color-accent-border);
+    background: var(--color-accent-light);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* Secondary conditions */
+.secondaryList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.secondaryCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.secondaryName {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.secondaryDesc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+.lessLikelyNote {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+.lessLikelyIcon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    opacity: 0.5;
+}
+
+/* Summary block */
+.summaryBlock {
+    padding: var(--space-6);
+    background: var(--color-surface-warm);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+}
+
+.summaryLabel {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-accent);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--space-3);
+}
+
+.summaryText {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+    font-family: var(--font-family-accent);
+    font-size: 1.05rem;
+}
+
+/* ============================================
+   4. REMEDY CARDS
+   ============================================ */
+
+.remedyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-5);
+}
+
+.remedyCard {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+}
+
+.remedyIconWrap {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    background: var(--color-accent-light);
+    border: 1px solid var(--color-accent-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+.remedyText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.remedyTitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.remedyDesc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* ============================================
+   5. DISCLAIMER
+   ============================================ */
+
+.disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    padding: var(--space-6) var(--space-6);
+    border: 1.5px solid var(--color-border-warm);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface-warm);
+}
+
+.disclaimerIcon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    background: rgba(59, 76, 138, 0.06);
+    border: 1px solid rgba(59, 76, 138, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-indigo);
+}
+
+.disclaimerText {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.disclaimerHeading {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.disclaimerBody {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* ============================================
+   6. DOCTOR CTA SECTION
+   ============================================ */
+
+.doctorCta {
+    padding: var(--space-12) 0;
+}
+
+.ctaCard {
+    background: var(--gradient-dark);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12) var(--space-8);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(149, 109, 31, 0.4), transparent);
+}
+
+.ctaCard::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(149, 109, 31, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.ctaCardUrgent::before {
+    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.35), transparent);
+}
+
+.ctaCardUrgent::after {
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.04) 0%, transparent 70%);
+}
+
+.ctaInner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-5);
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.ctaHeading {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-3xl);
+    color: var(--color-text-inverse);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+
+.ctaCopy {
+    font-size: var(--font-size-base);
+    color: rgba(250, 248, 244, 0.5);
+    line-height: var(--line-height-relaxed);
+    font-family: var(--font-family-accent);
+    margin: 0;
+}
+
+.ctaButtons {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ============================================
+   7. RELATED ACTIONS FOOTER
+   ============================================ */
+
+.relatedActions {
+    padding: var(--space-8) 0 var(--space-12);
+}
+
+.relatedActionsInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+/* ============================================
+   SECTION SPACING WRAPPER
+   ============================================ */
+
+.contentWrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding: var(--space-12) 0;
+}
+
+.sectionTitle {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-6);
+}
+
+.sectionTitleInverse {
+    color: var(--color-text-inverse);
+}

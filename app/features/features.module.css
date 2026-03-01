@@ -1,0 +1,262 @@
+.featuresPage :global(.feature-module) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-16);
+  align-items: center;
+  margin-bottom: var(--space-24);
+}
+
+@media (min-width: 1024px) {
+  .featuresPage :global(.feature-module) {
+    grid-template-columns: 1fr 1fr;
+  }
+  .featuresPage :global(.feature-module.reverse) {
+    direction: rtl;
+  }
+  .featuresPage :global(.feature-module.reverse) > * {
+    direction: ltr;
+  }
+}
+
+.featuresPage :global(.feature-label) {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-5);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--radius-full);
+  background: var(--color-accent-light);
+}
+
+.featuresPage :global(.feature-label.accent) {
+  border-color: rgba(149, 109, 31, 0.2);
+  background: rgba(149, 109, 31, 0.08);
+}
+
+.featuresPage :global(.spec-list) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.featuresPage :global(.spec-item) {
+  padding-left: var(--space-5);
+  border-left: 2px solid var(--color-accent-border);
+}
+
+.featuresPage :global(.spec-item) h4 {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-base);
+}
+
+.featuresPage :global(.device-showcase) {
+  width: 100%;
+  height: 500px;
+  background: var(--gradient-dark);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 32px 64px rgba(26, 23, 20, 0.14), 0 0 0 1px rgba(149, 109, 31, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuresPage :global(.device-showcase)::before {
+  content: 'NIVARA';
+  font-family: var(--font-family-display);
+  color: rgba(250, 248, 244, 0.08);
+  font-size: var(--font-size-5xl);
+  letter-spacing: 0.15em;
+}
+
+.featuresPage :global(.device-showcase)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0.3;
+}
+
+.featuresPage :global(.ai-visualization) {
+  width: 100%;
+  height: 500px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.featuresPage :global(.ai-grid) {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(149, 109, 31, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(149, 109, 31, 0.12) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.featuresPage :global(.timeline-preview) {
+  width: 100%;
+  height: 500px;
+  background: var(--color-surface);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  padding: var(--space-12);
+}
+
+.featuresPage :global(.timeline-line) {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: var(--color-border-warm);
+  transform: translateX(-50%);
+}
+
+.featuresPage :global(.timeline-point) {
+  position: absolute;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--color-border-warm);
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.featuresPage :global(.timeline-point.active) {
+  width: 18px;
+  height: 18px;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-light);
+}
+
+.featuresPage :global(.professional-card) {
+  width: 100%;
+  height: 500px;
+  background: var(--color-surface);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.featuresPage :global(.card-header) {
+  height: 120px;
+  background: var(--gradient-dark);
+  position: relative;
+}
+
+.featuresPage :global(.card-header)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(149, 109, 31, 0.2), transparent);
+}
+
+.featuresPage :global(.card-body) {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.featuresPage :global(.card-line) {
+  height: 10px;
+  background: var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.featuresPage :global(.card-line.short) {
+  width: 60%;
+}
+
+.featuresPage :global(.specs-grid) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .featuresPage :global(.specs-grid) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.featuresPage :global(.spec-category) {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  position: relative;
+}
+
+.featuresPage :global(.spec-category)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 1.5px;
+  background: var(--gradient-gold-subtle);
+}
+
+.featuresPage :global(.spec-table) {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.featuresPage :global(.spec-table) tr {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.featuresPage :global(.spec-table) tr:last-child {
+  border-bottom: none;
+}
+
+.featuresPage :global(.spec-table) td {
+  padding: var(--space-3) 0;
+  font-size: var(--font-size-sm);
+}
+
+.featuresPage :global(.spec-table) td:first-child {
+  color: var(--color-text-secondary);
+}
+
+.featuresPage :global(.spec-table) td:last-child {
+  text-align: right;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 767px) {
+  .featuresPage :global(.feature-module) {
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+
+  .featuresPage :global(.device-showcase),
+  .featuresPage :global(.ai-visualization),
+  .featuresPage :global(.timeline-preview),
+  .featuresPage :global(.professional-card) {
+    height: 300px;
+  }
+
+  .featuresPage :global(.device-showcase)::before {
+    font-size: var(--font-size-3xl);
+  }
+}

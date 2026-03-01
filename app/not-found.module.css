@@ -1,0 +1,38 @@
+.notFoundPage :global(.error-page) {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  background: var(--color-background);
+}
+
+.notFoundPage :global(.error-container) {
+  text-align: center;
+  max-width: 500px;
+}
+
+.notFoundPage :global(.error-code) {
+  font-family: var(--font-family-display);
+  font-size: 120px;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+  color: var(--color-border-warm);
+}
+
+@media (min-width: 768px) {
+  .notFoundPage :global(.error-code) {
+    font-size: 160px;
+  }
+}
+
+.notFoundPage :global(.error-title) {
+  margin-bottom: var(--space-4);
+}
+
+.notFoundPage :global(.error-message) {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: var(--line-height-relaxed);
+}

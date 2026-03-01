@@ -1,0 +1,755 @@
+/* ============================================
+   DEMO PAGE — Page-Specific Styles
+   All design tokens sourced from globals.css
+   ============================================ */
+
+.demoPage {
+    padding-top: 80px;
+    background: var(--color-background);
+    min-height: 100vh;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.hero {
+    padding: var(--space-16) 0 var(--space-8);
+    text-align: center;
+    position: relative;
+}
+
+.heroHeadline {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-5xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: var(--space-5) 0 var(--space-5);
+}
+
+@media (max-width: 768px) {
+    .heroHeadline {
+        font-size: var(--font-size-4xl);
+    }
+}
+
+.heroSub {
+    font-family: var(--font-family-accent);
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    max-width: 520px;
+    margin: 0 auto var(--space-5);
+}
+
+.freeScanBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-accent-border);
+    border-radius: var(--radius-full);
+    background: var(--color-accent-light);
+    margin-bottom: var(--space-4);
+}
+
+.freeScanBadge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 1px;
+    background: var(--gradient-gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+.disclaimerLine {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+/* ============================================
+   SCAN GUIDELINES
+   ============================================ */
+
+.guidelinesRow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-10);
+}
+
+@media (max-width: 900px) {
+    .guidelinesRow {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .guidelinesRow {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.guideCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+}
+
+.guideIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-lg);
+    background: var(--color-accent-light);
+    border: 1px solid var(--color-accent-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.guideText {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* ============================================
+   UPLOAD ZONE (IDLE)
+   ============================================ */
+
+.uploadSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    padding-bottom: var(--space-16);
+}
+
+.dropZone {
+    width: 100%;
+    max-width: 640px;
+    border: 2px dashed var(--color-accent-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-12) var(--space-8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    background: var(--color-accent-light);
+    transition: border-color var(--transition-base), background var(--transition-base);
+    position: relative;
+}
+
+.dropZone:hover,
+.dropZoneDragging {
+    border-color: var(--color-accent);
+    background: rgba(149, 109, 31, 0.06);
+}
+
+.dropZoneIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-xl);
+    border: 1.5px solid var(--color-accent-border);
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.dropZonePrompt {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin: 0;
+}
+
+.uploadBtns {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* hidden file inputs */
+.fileInput {
+    display: none;
+}
+
+/* preview inside drop zone */
+.imagePreview {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.previewImg {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+}
+
+.previewMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.previewFileName {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.clearBtn {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.clearBtn:hover {
+    color: var(--color-error);
+}
+
+/* ============================================
+   PROCESSING STATE
+   ============================================ */
+
+.processingWrap {
+    padding: var(--space-8) 0 var(--space-16);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .processingWrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scan image with animated overlay */
+.processingImageWrap {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.processingImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gold scan line that sweeps vertically */
+@keyframes scanSweep {
+    0% {
+        top: 0%;
+        opacity: 1;
+    }
+
+    90% {
+        top: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.scanLine {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    box-shadow: 0 0 16px rgba(149, 109, 31, 0.6), 0 0 40px rgba(149, 109, 31, 0.25);
+    animation: scanSweep 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* dark overlay so line pops */
+.processingImageWrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 23, 20, 0.35);
+    pointer-events: none;
+}
+
+/* Analysis panel */
+.analysisPanel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.analysisPanelTitle {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.stepsList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.stepItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    transition: color var(--transition-base);
+}
+
+.stepItemActive {
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.stepDot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: var(--color-border-warm);
+    flex-shrink: 0;
+    transition: background var(--transition-base);
+}
+
+.stepDotActive {
+    background: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(149, 109, 31, 0.15);
+}
+
+.stepDotDone {
+    background: var(--color-success);
+}
+
+/* Progress bar */
+.progressWrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.progressLabel {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.progressTrack {
+    height: 6px;
+    background: var(--color-border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-full);
+    transition: width 100ms linear;
+}
+
+/* ============================================
+   RESULT PREVIEW STATE
+   ============================================ */
+
+.resultWrap {
+    padding: var(--space-8) 0 var(--space-16);
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.resultHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.checkmarkCircle {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-gold);
+}
+
+.resultHeaderText {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.resultTitle {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+}
+
+.resultSubtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* severity */
+.severityBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+}
+
+.sevLow {
+    background: rgba(22, 163, 74, 0.08);
+    color: var(--color-success);
+    border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.sevModerate {
+    background: rgba(202, 138, 4, 0.08);
+    color: #92640F;
+    border: 1px solid rgba(202, 138, 4, 0.2);
+}
+
+.sevHigh {
+    background: rgba(220, 38, 38, 0.08);
+    color: var(--color-error);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.severityDot {
+    width: 7px;
+    height: 7px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+}
+
+.dotLow {
+    background: var(--color-success);
+}
+
+.dotMod {
+    background: #92640F;
+}
+
+.dotHigh {
+    background: var(--color-error);
+}
+
+/* Primary diagnosis */
+.primaryCondition {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-4xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.conditionMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.confidenceTag {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent);
+}
+
+.conditionDesc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* Secondary list */
+.secondaryConditions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.secondaryItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-sm);
+}
+
+.secondaryItem:last-child {
+    border-bottom: none;
+}
+
+.secondaryName {
+    color: var(--color-text-primary);
+}
+
+.secondaryConf {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+}
+
+/* summary */
+.resultSummary {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    font-family: var(--font-family-accent);
+    font-style: italic;
+    padding: var(--space-4) var(--space-5);
+    border-left: 2px solid var(--color-accent-border);
+    background: var(--color-accent-light);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: 0;
+}
+
+/* CTA row */
+.resultCtAs {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.freeNote {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    text-align: center;
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+/* ============================================
+   USED STATE
+   ============================================ */
+
+.usedWrap {
+    padding: var(--space-16) 0;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.usedHeading {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-3xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.prevScanCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.prevScanRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+}
+
+.prevScanLabel {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.prevScanValue {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.wantMoreDivider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    width: 100%;
+}
+
+.wantMoreLine {
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.wantMoreText {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.usedOptionsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .usedOptionsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.optionCard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: left;
+    text-decoration: none;
+}
+
+.optionIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: var(--color-accent-light);
+    border: 1px solid var(--color-accent-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    transition: background var(--transition-base);
+}
+
+.optionCard:hover .optionIcon {
+    background: var(--color-accent);
+    color: white;
+}
+
+.optionTitle {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.optionDesc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+.buyNote {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+/* ============================================
+   GATE STATE
+   ============================================ */
+
+.gateWrap {
+    padding: var(--space-20) 0;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.gateIcon {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: var(--shadow-gold);
+}
+
+.gateHeading {
+    font-family: var(--font-family-display);
+    font-size: var(--font-size-3xl);
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.gateDesc {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+    margin: 0;
+}
+
+.gateBtns {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+}

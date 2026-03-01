@@ -1,0 +1,72 @@
+.signupPage :global(.auth-form) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.signupPage :global(.form-row) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .signupPage :global(.form-row) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.signupPage :global(.checkbox-label) {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.signupPage :global(.checkbox-label) input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.signupPage :global(.text-link) {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.signupPage :global(.text-link):hover {
+  color: var(--color-accent-hover);
+}
+
+.signupPage :global(.password-strength) {
+  margin-top: var(--space-2);
+  height: 3px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.signupPage :global(.strength-bar) {
+  height: 100%;
+  width: 0;
+  transition: all var(--transition-base);
+  border-radius: var(--radius-full);
+}
+
+.signupPage :global(.strength-bar.weak) { width: 25%; background: var(--color-error); }
+.signupPage :global(.strength-bar.fair) { width: 50%; background: #D97706; }
+.signupPage :global(.strength-bar.good) { width: 75%; background: var(--color-accent); }
+.signupPage :global(.strength-bar.strong) { width: 100%; background: var(--color-success); }
+
+.signupPage :global(.auth-footer) {
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
