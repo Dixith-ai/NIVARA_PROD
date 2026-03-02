@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { DM_Serif_Display, Cormorant_Garamond, Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import ConditionalNavbar from '@/components/ConditionalNavbar';
 import CursorGlow from '@/components/CursorGlow';
 import ScrollReveal from '@/components/ScrollReveal';
+import ClarityScript from '@/components/ClarityScript';
+import FeedbackWidget from '@/components/FeedbackWidget';
 import { AuthProvider } from '@/context/AuthContext';
 
 const dmSerif = DM_Serif_Display({
@@ -44,8 +47,11 @@ export default function RootLayout({
           {children}
           <CursorGlow />
           <ScrollReveal />
+          <ClarityScript />
+          <FeedbackWidget />
         </AuthProvider>
       </body>
+      <GoogleAnalytics gaId="G-7PDC21ZWW5" />
     </html>
   );
 }

@@ -287,6 +287,12 @@ export default function DemoPage() {
                                         otherConditions: scanRecord.predictions.slice(1, 4),
                                     }),
                                 }).catch(console.error);
+                                // Schedule feedback follow-up email (fires ~5 min later via cron)
+                                fetch('/api/email/schedule-feedback', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ to: user.email, firstName: fn, uid: user.uid }),
+                                }).catch(console.error);
                             }
                         }
                     } catch { /* localStorage unavailable */ }

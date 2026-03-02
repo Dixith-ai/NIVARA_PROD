@@ -143,6 +143,11 @@ export default function DoctorsPage() {
     return (
         <main className={styles.doctorsPage}>
 
+            {/* ════════════ BETA STRIP ════════════ */}
+            <div className={styles.betaStrip}>
+                NIVARA is currently in beta. Doctor profiles shown are demonstrations of the platform&apos;s capabilities.
+            </div>
+
             {/* ════════════ 1. HERO ════════════ */}
             <section className={styles.hero}>
                 <div className="container">
@@ -318,6 +323,7 @@ export default function DoctorsPage() {
                                             {isSmartMatch && (
                                                 <span className={styles.recommendedTag}>Recommended for You</span>
                                             )}
+                                            <span className={styles.demoBadge}>Demo Profile</span>
 
                                             {/* Header */}
                                             <div className={styles.cardHeader}>

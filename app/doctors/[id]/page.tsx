@@ -186,6 +186,19 @@ export default function DoctorProfilePage() {
     return (
         <main className={styles.profilePage}>
 
+            {/* ════════════ BETA STRIP ════════════ */}
+            <div style={{
+                background: 'rgba(255,255,255,0.03)',
+                borderBottom: '1px solid rgba(201,168,76,0.15)',
+                padding: '8px 16px',
+                textAlign: 'center',
+                fontSize: '12px',
+                color: '#C9A84C',
+                letterSpacing: '0.01em',
+            }}>
+                NIVARA is currently in beta. Doctor profiles shown are demonstrations of the platform&apos;s capabilities.
+            </div>
+
             {/* ════════════ 1. HERO ════════════ */}
             <section className={styles.hero} style={{ borderBottom: '1px solid var(--color-border)' }}>
                 <div className="container">
@@ -203,7 +216,14 @@ export default function DoctorProfilePage() {
                         </div>
 
                         {/* Info */}
-                        <div className={styles.heroInfo}>
+                        <div className={styles.heroInfo} style={{ position: 'relative' }}>
+                            <span style={{
+                                position: 'absolute', top: 0, right: 0,
+                                fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em',
+                                textTransform: 'uppercase', color: '#C9A84C',
+                                border: '1px solid rgba(201,168,76,0.5)', background: 'transparent',
+                                padding: '2px 8px', borderRadius: '4px', pointerEvents: 'none',
+                            }}>Demo Profile</span>
                             {isSmartMatch && smartMatchCondition && (
                                 <div className={styles.smartMatchTag}>
                                     <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">

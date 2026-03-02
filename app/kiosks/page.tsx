@@ -21,6 +21,18 @@ export default function KiosksPage() {
 
   return (
     <div className={styles.kiosksPage}>
+      {/* Beta strip */}
+      <div style={{
+        background: 'rgba(255,255,255,0.03)',
+        borderBottom: '1px solid rgba(201,168,76,0.15)',
+        padding: '8px 16px',
+        textAlign: 'center',
+        fontSize: '12px',
+        color: '#C9A84C',
+        letterSpacing: '0.01em',
+      }}>
+        NIVARA kiosk locations shown are demonstrations. Real kiosks coming soon.
+      </div>
       <section className="page-hero sacred-pattern royal-bar">
         <div className="container">
           <span className="section-label slide-up">Locations</span>
@@ -70,7 +82,14 @@ export default function KiosksPage() {
             <div className="results-container">
               <h3 className="mb-6">Nearby locations</h3>
               {filtered.map((kiosk, i) => (
-                <div key={i} className="kiosk-card reveal">
+                <div key={i} className="kiosk-card reveal" style={{ position: 'relative' }}>
+                  <span style={{
+                    position: 'absolute', top: '10px', right: '12px',
+                    fontSize: '10px', fontWeight: 600, letterSpacing: '0.1em',
+                    textTransform: 'uppercase', color: '#C9A84C',
+                    border: '1px solid rgba(201,168,76,0.5)', background: 'transparent',
+                    padding: '2px 8px', borderRadius: '4px', pointerEvents: 'none',
+                  }}>Demo Location</span>
                   <div className="kiosk-info">
                     <h4>{kiosk.name}</h4>
                     <p className="text-secondary text-small mb-2">{kiosk.address}</p>
