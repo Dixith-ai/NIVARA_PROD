@@ -284,7 +284,7 @@ export default function DemoPage() {
                                         confidence: scanRecord.topConfidence,
                                         severity: scanRecord.severity,
                                         scanId: scanRecord.scanId,
-                                        otherConditions: scanRecord.predictions.slice(1, 4),
+                                        otherConditions: scanRecord.predictions.slice(1),
                                     }),
                                 }).catch(console.error);
                                 // Schedule feedback follow-up email (fires ~5 min later via cron)

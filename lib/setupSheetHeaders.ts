@@ -1,6 +1,6 @@
 import { google } from 'googleapis';
 
-const HEADERS = [
+export const SHEET_HEADERS = [
     'Timestamp', 'UID', 'Name', 'Email', 'Source',
     'Q1 Signup Smoothness', 'Q1 Detail',
     'Q2 Invasive Step', 'Q2 Detail',
@@ -22,19 +22,21 @@ const HEADERS = [
     'Q18 Would Recommend', 'Q18 Detail',
 ];
 
-export async function setupSheetHeaders(): Promise<{ status: 'created' | 'exists' }> {
-    const auth = new google.auth.GoogleAuth({
+function buildAuth() {
+    return new google.auth.GoogleAuth({
         credentials: {
             client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
             private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
         },
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
+}
 
-    const sheets = google.sheets({ version: 'v4', auth });
+export async function setupSheetHeaders(): Promise<{ status: 'created' | 'exists' }> {
+    const sheets = google.sheets({ version: 'v4', auth: buildAuth() });
     const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
 
-    // Check if row 1 col A already says "Timestamp"
+    // 1. Check if A1 already says "Timestamp" — if so, nothing to do
     const existing = await sheets.spreadsheets.values.get({
         spreadsheetId,
         range: 'Sheet1!A1',
@@ -44,13 +46,38 @@ export async function setupSheetHeaders(): Promise<{ status: 'created' | 'exists
         return { status: 'exists' };
     }
 
-    // Write header row
+    // 2. Clear the entire sheet first to avoid duplicate rows
+    await sheets.spreadsheets.values.clear({
+        spreadsheetId,
+        range: 'Sheet1',
+    });
+
+    // 3. Write the correct header row to row 1
     await sheets.spreadsheets.values.update({
         spreadsheetId,
         range: 'Sheet1!A1',
         valueInputOption: 'RAW',
-        requestBody: { values: [HEADERS] },
+        requestBody: { values: [SHEET_HEADERS] },
     });
 
     return { status: 'created' };
+}
+
+/** Hard reset: wipe Sheet1 completely and re-write the header row.
+ *  Used by the /api/reset-sheet route. */
+export async function resetSheet(): Promise<void> {
+    const sheets = google.sheets({ version: 'v4', auth: buildAuth() });
+    const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
+
+    await sheets.spreadsheets.values.clear({
+        spreadsheetId,
+        range: 'Sheet1',
+    });
+
+    await sheets.spreadsheets.values.update({
+        spreadsheetId,
+        range: 'Sheet1!A1',
+        valueInputOption: 'RAW',
+        requestBody: { values: [SHEET_HEADERS] },
+    });
 }

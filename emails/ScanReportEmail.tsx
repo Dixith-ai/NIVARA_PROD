@@ -73,6 +73,10 @@ export function ScanReportEmail({ firstName, topCondition, confidence, severity,
 
             <Hr style={{ borderColor: 'rgba(212,175,55,0.15)', margin: '20px 0' }} />
 
+            <Text style={{ fontSize: '11px', color: '#555555', fontStyle: 'italic', margin: '0 0 16px', lineHeight: '1.6' }}>
+                📎 Your full scan report has been attached as a PDF to this email.
+            </Text>
+
             <Link
                 href={`${APP_URL}/results`}
                 style={{
