@@ -1,13 +1,16 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import { useAuth } from '@/context/AuthContext';
 import FeedbackForm from './FeedbackForm';
 import styles from './feedback-widget.module.css';
 
 const HIDDEN_PATHS = ['/login', '/signup', '/onboarding'];
 
 export default function FeedbackWidget() {
+    const { user } = useAuth();
+    const router = useRouter();
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
     const [done, setDone] = useState(false);
@@ -18,6 +21,16 @@ export default function FeedbackWidget() {
         pathname.startsWith('/admin');
 
     if (hidden) return null;
+
+    const handleOpen = () => {
+        if (!user) {
+            // Not logged in — redirect to login (same pattern as ProtectedRoute)
+            router.push('/login');
+            return;
+        }
+        setDone(false);
+        setOpen(true);
+    };
 
     const handleComplete = () => {
         setDone(true);
@@ -32,7 +45,7 @@ export default function FeedbackWidget() {
             {/* Floating pill button */}
             <button
                 className={styles.feedbackBtn}
-                onClick={() => { setOpen(true); setDone(false); }}
+                onClick={handleOpen}
                 aria-label="Share feedback"
             >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none"

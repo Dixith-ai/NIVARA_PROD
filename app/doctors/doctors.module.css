@@ -233,23 +233,17 @@
 }
 
 /* ============================================
-   4. DOCTOR CARD
+   4. DOCTOR CARD — Light Theme
    ============================================ */
 
 .doctorsGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
     margin-bottom: var(--space-8);
 }
 
-@media (max-width: 1024px) {
-    .doctorsGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .doctorsGrid {
         grid-template-columns: 1fr;
     }
@@ -258,17 +252,18 @@
 .doctorCard {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
     position: relative;
+    padding: var(--space-8) !important;
 }
 
-/* Smart-match outline */
+/* Smart-match highlight */
 .doctorCardMatched {
     border-color: var(--color-accent-border) !important;
-    background: linear-gradient(160deg, var(--color-surface) 0%, rgba(149, 109, 31, 0.04) 100%) !important;
+    background: linear-gradient(160deg, #FFFFFF 0%, rgba(149, 109, 31, 0.03) 100%) !important;
 }
 
-/* Recommended tag at top of card */
+/* Recommended tag */
 .recommendedTag {
     position: absolute;
     top: -10px;
@@ -291,18 +286,18 @@
     gap: var(--space-4);
 }
 
-/* Avatar */
+/* Avatar — light gold tint, gold initials */
 .avatarWrap {
     position: relative;
     flex-shrink: 0;
 }
 
 .avatar {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     border-radius: var(--radius-full);
-    background: linear-gradient(135deg, #2a2420, #3a2e28);
-    border: 2px solid var(--color-border);
+    background: rgba(149, 109, 31, 0.08);
+    border: 1.5px solid rgba(149, 109, 31, 0.18);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -314,7 +309,7 @@
 
 .avatarMatched {
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(149, 109, 31, 0.12);
+    box-shadow: 0 0 0 3px rgba(149, 109, 31, 0.1);
 }
 
 /* Verified badge */
@@ -329,7 +324,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--color-background);
+    border: 1.5px solid var(--color-surface);
 }
 
 /* Doctor info */
@@ -340,11 +335,11 @@
 
 .doctorName {
     font-family: var(--font-family-display);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     color: var(--color-text-primary);
     letter-spacing: -0.01em;
     line-height: 1.2;
-    margin-bottom: var(--space-1);
+    margin-bottom: var(--space-2);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -374,13 +369,14 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     color: var(--color-text-secondary);
 }
 
 .metaIcon {
     flex-shrink: 0;
-    opacity: 0.55;
+    opacity: 0.5;
+    color: var(--color-text-secondary);
 }
 
 /* Star rating */
@@ -397,7 +393,7 @@
 }
 
 .ratingNum {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     color: var(--color-text-primary);
 }
@@ -416,10 +412,11 @@
 }
 
 .langTag {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     font-weight: var(--font-weight-medium);
     color: var(--color-text-secondary);
-    background: var(--color-border);
+    background: var(--color-surface-warm);
+    border: 1px solid var(--color-border);
     padding: 2px var(--space-2);
     border-radius: var(--radius-sm);
 }
@@ -429,7 +426,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
 }
 
 .availDot {
@@ -456,7 +453,7 @@
     color: var(--color-text-secondary);
 }
 
-/* Consultation type */
+/* Consultation type tags — light theme */
 .consultRow {
     display: flex;
     gap: var(--space-2);
@@ -464,12 +461,13 @@
 }
 
 .consultTag {
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     font-weight: var(--font-weight-medium);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(250, 248, 244, 0.55);
+    color: var(--color-text-secondary);
     border: 1px solid var(--color-border);
+    background: var(--color-surface-warm);
     padding: 2px var(--space-2);
     border-radius: var(--radius-sm);
 }
@@ -478,7 +476,7 @@
 .cardDivider {
     height: 1px;
     background: var(--color-border);
-    margin: 0 calc(-1 * var(--space-6));
+    margin: 0 calc(-1 * var(--space-8));
 }
 
 /* Card action buttons */
@@ -487,15 +485,7 @@
     gap: var(--space-3);
 }
 
-.cardActions .btn {
-    flex: 1;
-    justify-content: center;
-    font-size: var(--font-size-xs);
-    padding: var(--space-3) var(--space-4);
-}
-
-/* btn-outline has color:var(--color-primary) = #1A1714 (near-black).
-   Inside a dark card that's invisible — force light text. */
+/* "View Profile" — outline style matching site's btn-outline */
 .viewProfileBtn {
     flex: 1;
     display: inline-flex;
@@ -506,9 +496,9 @@
     font-weight: var(--font-weight-medium);
     letter-spacing: 0.01em;
     border-radius: var(--radius-full);
-    border: 1.5px solid rgba(250, 248, 244, 0.25);
+    border: 1.5px solid var(--color-border-warm);
     background: transparent;
-    color: rgba(250, 248, 244, 0.85);
+    color: var(--color-text-primary);
     text-decoration: none;
     cursor: pointer;
     transition: all var(--transition-base);
@@ -516,10 +506,11 @@
 }
 
 .viewProfileBtn:hover {
-    border-color: rgba(250, 248, 244, 0.5);
-    background: rgba(250, 248, 244, 0.08);
-    color: rgba(250, 248, 244, 1);
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 23, 20, 0.12);
 }
 
 /* ============================================
@@ -606,7 +597,7 @@
     width: 72px;
     height: 72px;
     border-radius: var(--radius-full);
-    background: var(--color-surface);
+    background: var(--color-surface-warm);
     border: 1.5px solid var(--color-border);
     display: flex;
     align-items: center;
@@ -655,17 +646,19 @@
    8. BETA STRIP + DEMO BADGE
    ============================================ */
 
+/* Light-theme info strip — blends with the page */
 .betaStrip {
-    background: rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-    padding: 8px 16px;
+    background: var(--color-surface-warm);
+    border-bottom: 1px solid var(--color-border);
+    padding: 9px 16px;
     text-align: center;
     font-size: 12px;
-    color: #C9A84C;
+    color: var(--color-text-secondary);
     font-family: var(--font-family-body);
     letter-spacing: 0.01em;
 }
 
+/* Demo badge — gold outline, visible on light card */
 .demoBadge {
     position: absolute;
     top: 10px;
@@ -674,8 +667,8 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #C9A84C;
-    border: 1px solid rgba(201, 168, 76, 0.5);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent-border);
     background: transparent;
     padding: 2px 8px;
     border-radius: 4px;

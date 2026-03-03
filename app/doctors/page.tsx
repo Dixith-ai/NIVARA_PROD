@@ -317,7 +317,7 @@ export default function DoctorsPage() {
                                     return (
                                         <div
                                             key={doctor.id}
-                                            className={`card-dark ${styles.doctorCard}${isSmartMatch ? ` ${styles.doctorCardMatched}` : ''}`}
+                                            className={`card ${styles.doctorCard}${isSmartMatch ? ` ${styles.doctorCardMatched}` : ''}`}
                                             style={{ position: 'relative', padding: 'var(--space-6)' }}
                                         >
                                             {isSmartMatch && (

@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/email';
 import FeedbackSummaryEmail from '@/emails/FeedbackSummaryEmail';
 import { createElement } from 'react';
+import { appendFeedbackRow } from '@/lib/googleSheets';
 
 export async function POST(req: Request) {
     try {
@@ -12,6 +13,13 @@ export async function POST(req: Request) {
             subject: 'New NIVARA Feedback Received',
             react: createElement(FeedbackSummaryEmail, payload),
         });
+
+        // Append to Google Sheet — non-blocking failure (never fails the request)
+        try {
+            await appendFeedbackRow(payload);
+        } catch (sheetsErr) {
+            console.error('Google Sheets append error:', sheetsErr);
+        }
 
         return NextResponse.json({ ok: true });
     } catch (err) {
