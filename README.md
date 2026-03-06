@@ -19,12 +19,16 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Firebase](https://img.shields.io/badge/Firebase-12-FFCA28?style=flat&logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://www.nivara.life)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-FF6F00?style=flat&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+[![Deployed on Vercel](https://img.shields.io/badge/Frontend-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://www.nivara.life)
+[![ML on Render](https://img.shields.io/badge/ML%20API-Render-46E3B7?style=flat&logo=render&logoColor=white)](https://render.com)
 [![License](https://img.shields.io/badge/License-Proprietary-C4973A?style=flat)](#license)
 
 <br/>
 
-[**→ Live Demo**](https://www.nivara.life/demo) · [**→ Website**](https://www.nivara.life) · [**→ CI/CD Status**](https://github.com/Dixith-ai/NIVARA_PROD/actions)
+[**→ Live Demo**](https://www.nivara.life/demo) · [**→ Website**](https://www.nivara.life) · [**→ ML API**](https://github.com/Dixith-ai/nivara-api) · [**→ CI/CD Status**](https://github.com/Dixith-ai/NIVARA_PROD/actions)
 
 <br/>
 
@@ -36,9 +40,9 @@
 
 NIVARA is a precision skin health platform built indigenously in India. Upload a photo of a skin concern and receive a **structured differential diagnosis** — not one guess, but a ranked analysis of the most likely conditions with confidence scores, the way a clinician actually thinks.
 
-No device required for the demo. No appointment. No waiting room. Clinical-grade AI skin screening, accessible to anyone.
+No device required for the demo. No appointment. No waiting room. A custom-trained deep learning model classifies 10 dermatological conditions and returns confidence-scored predictions in under a minute.
 
-> *"The breakdown was more detailed than I expected. I had no idea — found a great option nearby."*
+> *"The breakdown was more detailed than I expected. The confidence scores made it feel credible."*
 > — Early User, Bengaluru
 
 ---
@@ -53,44 +57,118 @@ NIVARA bridges this gap with:
 - **Confidence scoring** — so users understand the certainty behind each result
 - **Dermatologist access** — verified specialists bookable directly from the result
 - **Kiosk deployment** — bringing screening to clinics, hospitals, and pharmacies
+- **IoT device** — a purpose-built handheld skin imaging device *(in development)*
 
 ---
 
-## Architecture
+## System Architecture
+
+NIVARA is a two-service system. The frontend web platform and the ML inference API are independent services, deployed separately, communicating over HTTP.
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         NIVARA PLATFORM                         │
-├──────────────────┬──────────────────┬───────────────────────────┤
-│   Frontend       │   Backend        │   Services                │
-│                  │                  │                           │
-│  Next.js 16      │  App Router API  │  Firebase Auth            │
-│  TypeScript      │  Route Handlers  │  Firestore DB             │
-│  CSS Modules     │  Server Actions  │  Firebase Storage         │
-│  DM Serif Display│                  │  Resend (Email)           │
-│  Cormorant       │                  │  Google Sheets (Feedback) │
-│  Inter           │                  │  Google Analytics GA4     │
-│                  │                  │  Microsoft Clarity        │
-└──────────────────┴──────────────────┴───────────────────────────┘
-                              │
-                    ┌─────────▼─────────┐
-                    │   Deployment      │
-                    │                   │
-                    │  Vercel (Prod)    │
-                    │  GitHub Actions   │
-                    │  (CI/CD)          │
-                    └───────────────────┘
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           NIVARA PLATFORM                               │
+├───────────────────────────────┬─────────────────────────────────────────┤
+│      WEB PLATFORM             │         ML INFERENCE API                │
+│      (This Repo)              │         (nivara-api)                    │
+│                               │                                         │
+│  Next.js 16 (App Router)      │  FastAPI (Python 3.11)                  │
+│  TypeScript (strict)          │  TensorFlow 2.16 (CPU)                  │
+│  Firebase Auth + Firestore    │  Custom CNN-GRU Model                   │
+│  Resend (Email)               │  10-class skin classification           │
+│  Google Sheets (Feedback)     │                                         │
+│  GA4 + Microsoft Clarity      │  POST /predict → confidence scores      │
+│                               │                                         │
+│  Deployed: Vercel             │  Deployed: Render.com                   │
+└───────────────────────────────┴─────────────────────────────────────────┘
+                │                              │
+                │    HTTP (image upload)        │
+                └──────────────────────────────┘
+                         Frontend calls
+                     POST /predict with image
+                   ← Returns ranked predictions
 ```
+
+---
+
+## The ML Model
+
+The inference engine is a **custom CNN-GRU hybrid** — a convolutional network for spatial feature extraction feeding into a gated recurrent unit for sequential pattern recognition. Trained to classify 10 dermatological conditions from a single skin image.
+
+### Architecture
+
+```
+Input Image (128×128 RGB)
+        │
+        ▼
+Conv2D(32) → ReLU → MaxPool        # Low-level feature extraction
+        │
+        ▼
+Conv2D(64) → ReLU → MaxPool        # Mid-level pattern detection
+        │
+        ▼
+Conv2D(128) → ReLU → MaxPool       # High-level feature maps
+        │
+        ▼
+Reshape (spatial → sequential)     # Bridge CNN → RNN
+        │
+        ▼
+GRU(64)                            # Sequential pattern analysis
+        │
+        ▼
+Dropout(0.5)                       # Regularisation
+        │
+        ▼
+Dense(10, softmax)                 # 10-class probability output
+```
+
+### Classified Conditions
+
+| # | Condition | Category |
+|---|-----------|----------|
+| 1 | Eczema | Inflammatory |
+| 2 | Melanoma | Malignant |
+| 3 | Atopic Dermatitis | Inflammatory |
+| 4 | Basal Cell Carcinoma | Malignant |
+| 5 | Melanocytic Nevi | Benign |
+| 6 | Benign Keratosis-like Lesions | Benign |
+| 7 | Psoriasis / Lichen Planus | Inflammatory |
+| 8 | Seborrheic Keratoses | Benign |
+| 9 | Tinea / Ringworm / Candidiasis | Infectious |
+| 10 | Warts / Molluscum / Viral Infections | Infectious |
+
+### API Endpoints
+
+```
+GET  /           → Health check, model status
+POST /predict    → Accepts image upload, returns ranked predictions
+```
+
+**Prediction response:**
+```json
+{
+  "predictions": [
+    { "condition": "Melanoma", "confidence": 85.3 },
+    { "condition": "Basal Cell Carcinoma", "confidence": 8.1 },
+    { "condition": "Eczema", "confidence": 3.2 },
+    ...
+  ]
+}
+```
+
+Results are sorted by confidence (descending). The frontend displays the top results as the differential diagnosis with ranked confidence scores.
 
 ---
 
 ## Tech Stack
 
+### Web Platform
+
 | Layer | Technology | Version |
 |-------|-----------|---------|
 | Framework | Next.js (App Router) | 16.1.6 |
 | Language | TypeScript (strict) | 5.x |
-| Auth & DB | Firebase | 12.x |
+| Auth & Database | Firebase | 12.x |
 | Email | Resend + React Email | 6.x |
 | Analytics | Google Analytics 4 + Microsoft Clarity | — |
 | Feedback Logging | Google Sheets API | v4 |
@@ -98,6 +176,18 @@ NIVARA bridges this gap with:
 | Deployment | Vercel | — |
 | CI/CD | GitHub Actions | — |
 | Node | 20 (pinned via .nvmrc) | 20.x |
+
+### ML Inference API
+
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| Framework | FastAPI | 0.111.0 |
+| Runtime | Python | 3.11.0 |
+| ML Framework | TensorFlow (CPU) | 2.16.1 |
+| Keras | tf-keras | 2.16.0 |
+| Image Processing | Pillow | 10.3.0 |
+| Server | Uvicorn (ASGI) | 0.29.0 |
+| Deployment | Render.com | — |
 
 ---
 
@@ -118,7 +208,7 @@ Push to branch
 │  4. next build      (build verify)  │
 │                                     │
 │  ALL must pass → merge allowed      │
-│  ANY failure → merge blocked        │
+│  ANY failure   → merge blocked      │
 └─────────────────────────────────────┘
       │
       ▼ (on merge to master)
@@ -129,54 +219,47 @@ Push to branch
 
 **Branch protection** is enforced on `master`. Direct pushes are blocked. All changes require a Pull Request with a passing Quality Gate.
 
-See the full pipeline documentation: [`NIVARA_CICD_Documentation.pdf`](./docs/NIVARA_CICD_Documentation.pdf)
-
 ---
 
 ## Project Structure
 
 ```
-nivara/
-├── app/                        # Next.js App Router
-│   ├── (pages)/                # Route pages
-│   │   ├── page.tsx            # Homepage
-│   │   ├── demo/               # Scan demo
-│   │   ├── features/           # Technology page
-│   │   ├── doctors/            # Doctor directory
-│   │   ├── results/            # Scan results
-│   │   ├── profile/            # User profile
-│   │   ├── onboarding/         # User onboarding
-│   │   ├── feedback/           # Feedback form
-│   │   ├── kiosks/             # Kiosk info
-│   │   └── buy/                # Early access
-│   ├── api/                    # API route handlers
-│   │   ├── email/              # Transactional emails
-│   │   └── cron/               # Scheduled jobs
-│   ├── admin/                  # Admin dashboard
-│   └── doctor/                 # Doctor portal
-├── components/                 # Shared components
-│   ├── Navbar.tsx
-│   ├── Footer.tsx
-│   ├── FeedbackWidget.tsx
-│   └── ClarityScript.tsx
-├── lib/                        # Utilities & config
-│   ├── firebase.ts             # Client Firebase
-│   ├── firebaseAdmin.ts        # Server Firebase Admin
-│   ├── email.ts                # Resend email sender
-│   └── googleSheets.ts         # Sheets API
-├── emails/                     # React Email templates
-├── public/
-│   └── images/                 # Static assets
-│       ├── nivara-device.webp
-│       └── nivara-device-clinical.webp
-├── scripts/                    # Seed & utility scripts
-├── .github/
-│   ├── workflows/
-│   │   ├── ci.yml              # Quality Gate pipeline
-│   │   └── pr-labels.yml       # Auto PR labeling
-│   └── labeler.yml             # Label rules
-├── .nvmrc                      # Node 20 pinned
-└── eslint.config.mjs           # ESLint flat config
+nivara/                             ← This repository (Web Platform)
+├── app/                            # Next.js App Router
+│   ├── page.tsx                    # Homepage
+│   ├── demo/                       # Scan demo (calls ML API)
+│   ├── features/                   # Technology page
+│   ├── doctors/                    # Doctor directory
+│   ├── results/                    # Scan results display
+│   ├── profile/                    # User profile
+│   ├── onboarding/                 # User onboarding
+│   ├── feedback/                   # Feedback form
+│   ├── kiosks/                     # Kiosk info
+│   ├── buy/                        # Early access
+│   ├── api/                        # API route handlers
+│   │   ├── email/                  # Transactional emails
+│   │   └── cron/                   # Scheduled jobs
+│   ├── admin/                      # Admin dashboard
+│   └── doctor/                     # Doctor portal
+├── components/                     # Shared React components
+├── lib/                            # Utilities & config
+│   ├── firebase.ts                 # Client Firebase
+│   ├── firebaseAdmin.ts            # Server Firebase Admin
+│   ├── email.ts                    # Resend email sender
+│   └── googleSheets.ts             # Sheets API
+├── emails/                         # React Email templates
+├── public/images/                  # Static assets
+├── scripts/                        # Seed & utility scripts
+├── .github/workflows/              # CI/CD pipeline
+├── .nvmrc                          # Node 20 pinned
+└── eslint.config.mjs               # ESLint flat config
+
+nivara-api/                         ← Separate repository (ML API)
+├── main.py                         # FastAPI app + model inference
+├── skin_disease_model22.h5         # Trained CNN-GRU weights
+├── requirements.txt                # Python dependencies
+├── runtime.txt                     # Python 3.11.0
+└── Render.yaml                     # Render.com deployment config
 ```
 
 ---
@@ -274,36 +357,31 @@ This is a private repository. To contribute:
 
 5. **Merge** once approved
 
-Branch naming convention:
-- `feature/` — new features
-- `fix/` — bug fixes
-- `chore/` — maintenance
-- `ci/` — pipeline changes
+Branch naming: `feature/` · `fix/` · `chore/` · `ci/` · `ml/`
 
 ---
 
 ## Team
 
-Built by the NIVARA founding team.
-
 | Name | Title |
 |------|-------|
-| **Karthik H S** | Frontend Engineer |
-| **Dixith Adithya** | Full Stack Engineer & IoT Architect |
 | **Mufeez** | Research & Clinical Validation |
+| **Dixith Adithya** | Full Stack Engineer & IoT Architect |
 | **Chethan** | Operations, Deployment & IoT |
-| **Pratham Limbani** | Product & Design |
+| **Karthik H S** | ML Engineer & Frontend Engineer |
+| **Pratham Limbani** | ML Engineer & Product |
 
 ---
 
 ## Deployment
 
-NIVARA is deployed on Vercel. Every merge to `master` triggers an automatic production deployment.
+| Service | Platform | Repository | URL |
+|---------|----------|-----------|-----|
+| Web Platform | Vercel | `NIVARA_PROD` | [nivara.life](https://www.nivara.life) |
+| ML Inference API | Render.com | `nivara-api` | `nivara-skin-api` on Render |
 
-| Branch | Environment | URL |
-|--------|------------|-----|
-| `master` | Production | [nivara.life](https://www.nivara.life) |
-| `feature/*` | Preview | Auto-generated by Vercel |
+Every merge to `master` in this repo triggers an automatic Vercel production deployment.
+The ML API is deployed independently on Render.com from the `nivara-api` repository.
 
 ---
 
@@ -320,7 +398,7 @@ This repository contains proprietary and confidential source code. Unauthorised 
 <br/>
 
 ```
-·  NIVARA  ·
+निवार  ·  NIVARA  ·  नि + वार  ·  Prevention + Strike
 ```
 
 *Precision skin health technology. Indigenously crafted in India.*
