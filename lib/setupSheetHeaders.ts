@@ -81,3 +81,53 @@ export async function resetSheet(): Promise<void> {
         requestBody: { values: [SHEET_HEADERS] },
     });
 }
+
+export const WAITLIST_HEADERS = ['Timestamp', 'First Name', 'Email', 'City', 'UID'];
+
+export async function setupWaitlistSheet(): Promise<{ status: 'created' | 'exists' }> {
+    const sheets = google.sheets({ version: 'v4', auth: buildAuth() });
+    const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
+
+    // 1. Get all sheets in the spreadsheet
+    const spreadsheet = await sheets.spreadsheets.get({ spreadsheetId });
+    const existingSheets = spreadsheet.data.sheets || [];
+    const waitlistSheet = existingSheets.find(s => s.properties?.title === 'Waitlist');
+
+    // 2. If Waitlist sheet doesn't exist, create it
+    if (!waitlistSheet) {
+        await sheets.spreadsheets.batchUpdate({
+            spreadsheetId,
+            requestBody: {
+                requests: [
+                    {
+                        addSheet: {
+                            properties: {
+                                title: 'Waitlist',
+                            },
+                        },
+                    },
+                ],
+            },
+        });
+    }
+
+    // 3. Check if headers already exist
+    const existing = await sheets.spreadsheets.values.get({
+        spreadsheetId,
+        range: 'Waitlist!A1',
+    });
+
+    if (existing.data.values?.[0]?.[0] === 'Timestamp') {
+        return { status: 'exists' };
+    }
+
+    // 4. Write headers
+    await sheets.spreadsheets.values.update({
+        spreadsheetId,
+        range: 'Waitlist!A1',
+        valueInputOption: 'RAW',
+        requestBody: { values: [WAITLIST_HEADERS] },
+    });
+
+    return { status: 'created' };
+}

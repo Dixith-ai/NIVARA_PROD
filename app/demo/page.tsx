@@ -33,7 +33,7 @@ const processingSteps = [
 
 const guidelines = [
     {
-        text: 'Good natural or indoor lighting — no flash',
+        text: 'Use natural or indoor light. No flash.',
         icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
@@ -44,7 +44,7 @@ const guidelines = [
         ),
     },
     {
-        text: 'Hold camera 10–15 cm from the skin',
+        text: 'Hold your camera 10 to 15 cm from the skin.',
         icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="12" cy="12" r="4" />
@@ -52,7 +52,7 @@ const guidelines = [
         ),
     },
     {
-        text: 'Keep the area in sharp focus',
+        text: 'Keep the area in sharp focus.',
         icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
@@ -60,7 +60,7 @@ const guidelines = [
         ),
     },
     {
-        text: 'Avoid filters or edited images',
+        text: 'No filters or edited images.',
         icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
@@ -68,7 +68,7 @@ const guidelines = [
         ),
     },
     {
-        text: 'Clean, bare skin — remove cream or makeup',
+        text: 'Clean, bare skin. No cream or makeup.',
         icon: (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
@@ -334,14 +334,14 @@ export default function DemoPage() {
                                 <circle cx="12" cy="8" r="4" /><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
                             </svg>
                         </div>
-                        <span className="section-label">Demo Access</span>
-                        <h1 className={styles.gateHeading}>Create a Free Account to Try the Demo</h1>
+                        <span className="section-label">Free Demo</span>
+                        <h1 className={styles.gateHeading}>See what your skin might be telling you.</h1>
                         <p className={styles.gateDesc}>
-                            Get one free AI-powered skin scan. Upload a photo of your concern and receive a differential diagnosis — no device required. No credit card, no commitment.
+                            Create a free account for one AI assisted skin scan. Upload a photo of your concern and receive a full differential diagnosis. No device. No appointment. No cost.
                         </p>
                         <div className={styles.gateBtns}>
-                            <Link href="/signup" className="btn btn-primary btn-large">Sign Up Free</Link>
-                            <Link href="/login" className="btn btn-outline btn-large">Log In</Link>
+                            <Link href="/signup" className="btn btn-primary btn-large">Create Account</Link>
+                            <Link href="/login" className="btn btn-outline btn-large">Sign In</Link>
                         </div>
                     </div>
                 </div>
@@ -354,13 +354,13 @@ export default function DemoPage() {
                 <div className="container">
                     <div className={styles.usedWrap}>
                         <span className="section-label">Free Scan Used</span>
-                        <h1 className={styles.usedHeading}>You've Already Used Your Free Demo Scan</h1>
+                        <h1 className={styles.usedHeading}>You have used your free demo scan.</h1>
 
                         {/* Previous scan summary */}
                         <div className="card" style={{ width: '100%', textAlign: 'left' }}>
                             <div className={styles.prevScanCard}>
                                 <h3 style={{ fontFamily: 'var(--font-family-display)', fontSize: 'var(--font-size-xl)', marginBottom: 'var(--space-2)' }}>
-                                    Previous Scan
+                                    Your Last Scan
                                 </h3>
                                 {prevScan ? (
                                     <div className={styles.prevScanRow}>
@@ -414,7 +414,7 @@ export default function DemoPage() {
                                 </div>
                                 <span className={styles.optionTitle}>Link Your Device</span>
                                 <p className={styles.optionDesc}>
-                                    If you own a NIVARA device, link it to your account for unlimited scans from home.
+                                    Own a NIVARA device? Link it to your account for unlimited scans.
                                 </p>
                             </Link>
 
@@ -424,9 +424,9 @@ export default function DemoPage() {
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
                                     </svg>
                                 </div>
-                                <span className={styles.optionTitle}>Find a Kiosk Near You</span>
+                                <span className={styles.optionTitle}>Find a Kiosk</span>
                                 <p className={styles.optionDesc}>
-                                    Visit a NIVARA kiosk for a full clinical-grade scan at your nearest partner location.
+                                    Visit a NIVARA kiosk for a full clinical grade scan at a location near you.
                                 </p>
                             </Link>
                         </div>
@@ -434,7 +434,7 @@ export default function DemoPage() {
                         <p className={styles.buyNote}>
                             Don&apos;t have a device yet?{' '}
                             <Link href="/buy" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontWeight: 500 }}>
-                                Buy the NIVARA Device →
+                                Learn about the device
                             </Link>
                         </p>
                     </div>
@@ -450,12 +450,12 @@ export default function DemoPage() {
                     <section className={styles.hero}>
                         <div className="container">
                             <div className="slide-up">
-                                <span className={styles.freeScanBadge}>Free Demo Scan · One Per Account</span>
-                                <h1 className={styles.heroHeadline}>See What Your Skin Is Telling You</h1>
+                                <span className={styles.freeScanBadge}>One free scan per account</span>
+                                <h1 className={styles.heroHeadline}>See what your skin might be telling you.</h1>
                                 <p className={styles.heroSub}>
-                                    Upload a photo of your skin concern and receive an AI-assisted differential diagnosis — no device required, no appointment needed.
+                                    Upload a clear photo of the area you are concerned about. Our AI will evaluate it against a clinical differential framework and return a ranked analysis of possible conditions.
                                 </p>
-                                <p className={styles.disclaimerLine}>This is a screening tool, not a medical diagnosis.</p>
+                                <p className={styles.disclaimerLine}>This is a screening tool, not a medical diagnosis. Always consult a qualified dermatologist for proper evaluation.</p>
                             </div>
                         </div>
                     </section>
@@ -504,7 +504,7 @@ export default function DemoPage() {
                                                 </svg>
                                             </div>
                                             <p className={styles.dropZonePrompt}>
-                                                Drag and drop your image here, or use the options below
+                                                Drag and drop your image here, or choose below
                                             </p>
                                             <div className={styles.uploadBtns}>
                                                 <button className="btn btn-outline" onClick={() => uploadInputRef.current?.click()}>
@@ -727,8 +727,7 @@ export default function DemoPage() {
 
                             {/* Summary */}
                             <p className={styles.resultSummary}>
-                                Your scan most strongly suggests <strong>{topName}</strong> ({topConf}% confidence).
-                                View your full report for a complete breakdown, basic remedies, and next steps.
+                                Your scan most strongly indicates <strong>{topName}</strong> at {topConf}% confidence. The full differential is shown below. We recommend reviewing this with a dermatologist before drawing any conclusions.
                             </p>
 
                             {/* CTAs */}
@@ -737,21 +736,13 @@ export default function DemoPage() {
                                     View Full Report
                                 </Link>
                                 <Link href="/doctors" className="btn btn-outline btn-large">
-                                    Book a Dermatologist
+                                    Find a Dermatologist
                                 </Link>
                             </div>
 
                             {/* Free scan note */}
                             <p className={styles.freeNote}>
-                                This was your free demo scan. For unlimited scans,{' '}
-                                <Link href="/profile" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontWeight: 500 }}>
-                                    link your NIVARA device
-                                </Link>{' '}
-                                or{' '}
-                                <Link href="/kiosks" style={{ color: 'var(--color-accent)', textDecoration: 'none', fontWeight: 500 }}>
-                                    visit a kiosk
-                                </Link>
-                                .
+                                This was your free demo scan. Link a NIVARA device or visit a kiosk for additional scans.
                             </p>
                         </div>
                     </div>

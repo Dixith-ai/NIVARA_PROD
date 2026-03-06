@@ -145,17 +145,17 @@ export default function DoctorsPage() {
 
             {/* ════════════ BETA STRIP ════════════ */}
             <div className={styles.betaStrip}>
-                NIVARA is currently in beta. Doctor profiles shown are demonstrations of the platform&apos;s capabilities.
+                NIVARA is in beta. Doctor profiles shown are demonstrations of the platform capabilities.
             </div>
 
             {/* ════════════ 1. HERO ════════════ */}
             <section className={styles.hero}>
                 <div className="container">
                     <div className="slide-up">
-                        <span className="section-label">Verified Dermatologists</span>
-                        <h1 className={styles.heroHeadline}>Find Your Dermatologist</h1>
+                        <span className="section-label">Dermatologists</span>
+                        <h1 className={styles.heroHeadline}>Find the right specialist.</h1>
                         <p className={styles.heroSub}>
-                            Every doctor on NIVARA is a verified dermatology professional. Browse, filter, and book a consultation in minutes.
+                            Browse verified dermatologists by specialisation, location, and availability. Book a consultation directly from your scan report or any time from here.
                         </p>
 
                         {/* Search */}
@@ -172,24 +172,6 @@ export default function DoctorsPage() {
                                 value={searchQuery}
                                 onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
                             />
-                        </div>
-
-                        {/* Trust stats */}
-                        <div className={styles.trustRow}>
-                            <div className={styles.trustStat}>
-                                <span className={styles.trustNumber}>142</span>
-                                <span className={styles.trustLabel}>Verified Doctors</span>
-                            </div>
-                            <div className={styles.trustDivider} />
-                            <div className={styles.trustStat}>
-                                <span className={styles.trustNumber}>12</span>
-                                <span className={styles.trustLabel}>Specializations</span>
-                            </div>
-                            <div className={styles.trustDivider} />
-                            <div className={styles.trustStat}>
-                                <span className={styles.trustNumber}>Available</span>
-                                <span className={styles.trustLabel}>Today</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -211,11 +193,11 @@ export default function DoctorsPage() {
                             <p className={styles.smartBannerDesc}>
                                 Based on your recent scan for{' '}
                                 <span className={styles.smartBannerCondition}>{smartMatchCondition}</span>,
-                                we&apos;ve highlighted doctors who specialize in this condition.
+                                we have highlighted dermatologists who specialise in this area.
                             </p>
                         </div>
                         <button className={styles.dismissBtn} onClick={() => setShowSmartMatch(false)}>
-                            Clear Match ✕
+                            Clear ✕
                         </button>
                     </div>
                 )}
@@ -301,9 +283,9 @@ export default function DoctorsPage() {
                                 <line x1="8" y1="11" x2="14" y2="11" />
                             </svg>
                         </div>
-                        <h2 className={styles.emptyTitle}>No Doctors Match Your Filters</h2>
-                        <p className={styles.emptyDesc}>Try broadening your search or clearing some filters.</p>
-                        <button className="btn btn-primary" onClick={clearFilters}>Clear All Filters</button>
+                        <h2 className={styles.emptyTitle}>No results match your filters.</h2>
+                        <p className={styles.emptyDesc}>Try adjusting or clearing your search filters.</p>
+                        <button className="btn btn-primary" onClick={clearFilters}>Clear Filters</button>
                     </div>
                 ) : (
                     <>
@@ -437,13 +419,13 @@ export default function DoctorsPage() {
                 <RevealSection>
                     <div className={styles.bottomCta}>
                         <span className="section-label" style={{ marginBottom: 'var(--space-4)', display: 'block' }}>
-                            Join NIVARA
+                            For Doctors
                         </span>
-                        <h2 className={styles.ctaHeading}>Are You a Dermatologist?</h2>
+                        <h2 className={styles.ctaHeading}>Are you a dermatologist?</h2>
                         <p className={styles.ctaDesc}>
-                            Join the NIVARA network and connect with patients who need your expertise.
+                            We are building the NIVARA verified doctor network. If you are a qualified dermatologist interested in joining the platform, we would love to hear from you.
                         </p>
-                        <a href="#" className="btn btn-outline btn-large">Apply to Join</a>
+                        <a href="#" className="btn btn-outline btn-large">Get in Touch</a>
                     </div>
                 </RevealSection>
             </div>

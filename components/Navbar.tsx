@@ -40,7 +40,6 @@ export default function Navbar() {
           <li><Link href="/#features" className={`nav-link${isActive('/#features') ? ' active' : ''}`} onClick={closeMenu}>Features</Link></li>
           <li><Link href="/features" className={`nav-link${isActive('/features') ? ' active' : ''}`} onClick={closeMenu}>Technology</Link></li>
           <li><Link href="/kiosks" className={`nav-link${isActive('/kiosks') ? ' active' : ''}`} onClick={closeMenu}>Kiosks</Link></li>
-          <li><Link href="/learn" className={`nav-link${isActive('/learn') ? ' active' : ''}`} onClick={closeMenu}>Learn</Link></li>
           <li><Link href="/doctors" className={`nav-link${isActive('/doctors') ? ' active' : ''}`} onClick={closeMenu}>Doctors</Link></li>
           <li><Link href="/demo" className={`nav-link${isActive('/demo') ? ' active' : ''}`} onClick={closeMenu}>Try Demo</Link></li>
 

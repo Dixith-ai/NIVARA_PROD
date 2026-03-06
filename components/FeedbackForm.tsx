@@ -1,8 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
-import { db } from '@/lib/firebase';
 import { useAuth } from '@/context/AuthContext';
 import { getUserProfile } from '@/lib/firestore';
 import styles from './FeedbackForm.module.css';
@@ -211,17 +209,19 @@ export default function FeedbackForm({ source, onComplete }: FeedbackFormProps) 
                 userName: user?.displayName || profile?.fullName || null,
                 userEmail: user?.email || null,
                 source,
-                completedAt: Timestamp.now(),
+                completedAt: new Date().toISOString(),
             };
 
-            await addDoc(collection(db, 'feedback'), payload);
-
-            // Fire admin notification — non-blocking
-            fetch('/api/email/feedback-submitted', {
+            // Submit to API — this now handles Firestore write, email, and Google Sheets
+            const response = await fetch('/api/email/feedback-submitted', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...payload, completedAt: new Date().toISOString() }),
-            }).catch(console.error);
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to submit feedback');
+            }
 
             onComplete();
         } catch {

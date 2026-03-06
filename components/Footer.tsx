@@ -25,9 +25,9 @@ export default function Footer() {
           <div className="footer-links">
             <h6>Resources</h6>
             <ul>
-              <li><Link href="/learn">Learn</Link></li>
-              <li><Link href="/learn">Support</Link></li>
-              <li><Link href="/learn">Documentation</Link></li>
+              <li><Link href="/doctors">Find Doctors</Link></li>
+              <li><Link href="/feedback">Feedback</Link></li>
+              <li><Link href="/demo">Try Demo</Link></li>
             </ul>
           </div>
 

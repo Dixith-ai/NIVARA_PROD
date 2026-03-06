@@ -78,13 +78,16 @@ export default function HomePage() {
       } else if (node.nodeName === 'BR') {
         title.appendChild(document.createElement('br'));
       } else if (node.nodeName === 'EM') {
-        const words = (node.textContent || '').split(/(\s+)/).filter((s) => s.length);
-        words.forEach((segment) => {
-          if (/^\s+$/.test(segment)) return;
+        const words = (node.textContent || '').split(/\s+/).filter((s) => s.length);
+        words.forEach((word, idx) => {
           const em = document.createElement('em');
-          const span = createWordSpan(segment, wordIndex++);
+          const span = createWordSpan(word, wordIndex++);
           em.appendChild(span);
           title.appendChild(em);
+          // Add space after each word except the last
+          if (idx < words.length - 1) {
+            title.appendChild(document.createTextNode(' '));
+          }
         });
       } else {
         title.appendChild((node as Element).cloneNode(true));
@@ -161,17 +164,17 @@ export default function HomePage() {
         <div className="container">
           <div className="hero-content">
             <p className="hero-origin slide-up">
-              <span className="heritage-badge"><span className="dot"></span> Indigenously Crafted in India <span className="dot"></span></span>
+              <span className="heritage-badge"><span className="dot"></span> Free Demo Available <span className="dot"></span></span>
             </p>
             <h1 ref={heroTitleRef} className="hero-title slide-up" style={{ animationDelay: '0.05s' }}>
-              Your skin deserves<br /><em>protection.</em>
+              Skin analysis that used to<br /> <em>require a clinic visit.</em>
             </h1>
             <p className="hero-subtitle slide-up" style={{ animationDelay: '0.15s' }}>
-              NIVARA combines precision imaging with intelligent analysis to guard your skin health — rooted in the Sanskrit tradition of <em>nivāra</em>, meaning shelter.
+              NIVARA brings clinical grade skin screening to anyone. No appointment. No waiting room. No specialist required. Upload a photo and receive a structured differential diagnosis in under a minute.
             </p>
             <div className="hero-cta slide-up" style={{ animationDelay: '0.25s' }}>
-              <Link href="/buy" className="btn btn-accent btn-large">Buy Device — $299</Link>
-              <Link href="/#features" className="btn btn-outline btn-large">Explore Technology</Link>
+              <Link href="/demo" className="btn btn-accent btn-large">Try the Free Demo</Link>
+              <Link href="/features" className="btn btn-outline btn-large">How It Works</Link>
             </div>
           </div>
 
@@ -189,10 +192,10 @@ export default function HomePage() {
       <section id="features" className="section">
         <div className="container">
           <div className="section-header reveal" ref={setRevealRef(revealIndex++)}>
-            <span className="section-label">Capabilities</span>
+            <span className="section-label">What NIVARA Does</span>
             <div className="divider reveal" ref={setRevealRef(revealIndex++)}><span className="divider-gem"></span></div>
-            <h2 className="text-center mb-4">Six ways NIVARA<br />understands your skin</h2>
-            <p className="text-center text-secondary font-accent" style={{ fontSize: '1.2rem', maxWidth: '460px', margin: '0 auto' }}>Precision engineering meets intelligent design.</p>
+            <h2 className="text-center mb-4">Built for early detection.<br />Not guesswork.</h2>
+            <p className="text-center text-secondary font-accent" style={{ fontSize: '1.2rem', maxWidth: '460px', margin: '0 auto' }}>Most tools give you one answer. NIVARA evaluates multiple possible conditions and ranks them. The way a clinician thinks.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ marginTop: 'var(--space-12)' }}>
@@ -203,8 +206,8 @@ export default function HomePage() {
                   <circle cx="24" cy="24" r="6" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h4 className="mb-3">Precision Imaging</h4>
-              <p className="text-secondary">Clinical-grade optics capture microscopic detail with exceptional clarity and depth.</p>
+              <h4 className="mb-3">Differential Diagnosis</h4>
+              <p className="text-secondary">Not a single guess. A ranked analysis of what your skin could be showing, with confidence scores for each.</p>
             </div>
 
             <div className="card reveal" ref={setRevealRef(revealIndex++)}>
@@ -214,8 +217,8 @@ export default function HomePage() {
                   <path d="M24 24L32 32L24 40L16 32L24 24Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
               </div>
-              <h4 className="mb-3">AI Analysis</h4>
-              <p className="text-secondary">Algorithms trained on millions of images detect patterns invisible to the human eye.</p>
+              <h4 className="mb-3">AI Assisted Analysis</h4>
+              <p className="text-secondary">Trained on clinical imaging data to detect patterns, pigmentation changes, and anomalies across skin conditions.</p>
             </div>
 
             <div className="card reveal" ref={setRevealRef(revealIndex++)}>
@@ -225,8 +228,8 @@ export default function HomePage() {
                   <line x1="8" y1="20" x2="40" y2="20" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h4 className="mb-3">Intelligent Tracking</h4>
-              <p className="text-secondary">Timeline visualization shows your skin&#39;s evolution over weeks, months, and years.</p>
+              <h4 className="mb-3">Scan History</h4>
+              <p className="text-secondary">Every scan is stored against your profile. Track changes, monitor progress, and share your history with a doctor.</p>
             </div>
 
             <div className="card reveal" ref={setRevealRef(revealIndex++)}>
@@ -236,8 +239,8 @@ export default function HomePage() {
                   <path d="M24 8V24L32 32" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h4 className="mb-3">Real-time Insights</h4>
-              <p className="text-secondary">Personalized recommendations based on your unique skin profile and history.</p>
+              <h4 className="mb-3">Personalised Insights</h4>
+              <p className="text-secondary">Results are contextualised to your skin type, history, and reported concerns. Not generic advice.</p>
             </div>
 
             <div className="card reveal" ref={setRevealRef(revealIndex++)}>
@@ -247,8 +250,8 @@ export default function HomePage() {
                   <path d="M24 8C32.837 8 40 15.163 40 24C40 32.837 32.837 40 24 40" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4" />
                 </svg>
               </div>
-              <h4 className="mb-3">Secure &amp; Private</h4>
-              <p className="text-secondary">End-to-end encryption keeps your health data completely private and protected.</p>
+              <h4 className="mb-3">Private by Design</h4>
+              <p className="text-secondary">Your scan data is yours. Encrypted, secure, and never sold or shared without your explicit consent.</p>
             </div>
 
             <div className="card reveal" ref={setRevealRef(revealIndex++)}>
@@ -259,8 +262,8 @@ export default function HomePage() {
                   <line x1="22" y1="22" x2="26" y2="26" stroke="currentColor" strokeWidth="1.5" />
                 </svg>
               </div>
-              <h4 className="mb-3">Professional Access</h4>
-              <p className="text-secondary">Share insights directly with dermatologists for expert consultation.</p>
+              <h4 className="mb-3">Dermatologist Access</h4>
+              <p className="text-secondary">Found something worth investigating? Connect with a verified dermatologist directly through NIVARA.</p>
             </div>
           </div>
         </div>
@@ -270,35 +273,35 @@ export default function HomePage() {
       <section className="section how-it-works">
         <div className="container">
           <div className="section-header reveal" ref={setRevealRef(revealIndex++)}>
-            <span className="section-label">Process</span>
+            <span className="section-label">How It Works</span>
             <div className="divider reveal" ref={setRevealRef(revealIndex++)}><span className="divider-gem"></span></div>
-            <h2 className="text-center mb-4">From capture to insight</h2>
-            <p className="text-center text-secondary font-accent" style={{ fontSize: '1.2rem', maxWidth: '420px', margin: '0 auto' }}>Four steps. No complexity.</p>
+            <h2 className="text-center mb-4">From photo to diagnosis<br />in under a minute.</h2>
+            <p className="text-center text-secondary font-accent" style={{ fontSize: '1.2rem', maxWidth: '420px', margin: '0 auto' }}>No device needed for the demo. Just a photo.</p>
           </div>
 
           <div className="steps-container" style={{ marginTop: 'var(--space-12)' }}>
             <div className="step reveal" ref={setRevealRef(revealIndex++)}>
               <div className="step-number">01</div>
-              <h4 className="mb-3">Capture</h4>
-              <p className="text-secondary text-small">Point the device. High-resolution images in seconds.</p>
+              <h4 className="mb-3">Upload</h4>
+              <p className="text-secondary text-small">Take a clear photo of the area you are concerned about and upload it directly from your phone or computer.</p>
             </div>
             <div className="step-connector reveal" ref={setRevealRef(revealIndex++)}></div>
             <div className="step reveal" ref={setRevealRef(revealIndex++)}>
               <div className="step-number">02</div>
-              <h4 className="mb-3">Analyze</h4>
-              <p className="text-secondary text-small">AI identifies key markers and changes instantly.</p>
+              <h4 className="mb-3">Analyse</h4>
+              <p className="text-secondary text-small">Our AI evaluates the image against a clinical differential framework and identifies the most likely conditions.</p>
             </div>
             <div className="step-connector reveal" ref={setRevealRef(revealIndex++)}></div>
             <div className="step reveal" ref={setRevealRef(revealIndex++)}>
               <div className="step-number">03</div>
-              <h4 className="mb-3">Track</h4>
-              <p className="text-secondary text-small">Watch your skin&#39;s story unfold on a visual timeline.</p>
+              <h4 className="mb-3">Review</h4>
+              <p className="text-secondary text-small">Receive a full ranked report with confidence scores, condition descriptions, and what to watch for.</p>
             </div>
             <div className="step-connector reveal" ref={setRevealRef(revealIndex++)}></div>
             <div className="step reveal" ref={setRevealRef(revealIndex++)}>
               <div className="step-number">04</div>
-              <h4 className="mb-3">Act</h4>
-              <p className="text-secondary text-small">Get insights. Connect with professionals if needed.</p>
+              <h4 className="mb-3">Consult</h4>
+              <p className="text-secondary text-small">If the result warrants it, book a consultation with a verified dermatologist directly from your report.</p>
             </div>
           </div>
         </div>
@@ -308,41 +311,41 @@ export default function HomePage() {
       <section className="section testimonials-section">
         <div className="container">
           <div className="section-header reveal" ref={setRevealRef(revealIndex++)}>
-            <span className="section-label section-label-light">Stories</span>
+            <span className="section-label section-label-light">Early Users</span>
             <div className="divider reveal" ref={setRevealRef(revealIndex++)}><span className="divider-gem"></span></div>
-            <h2 className="text-center mb-4" style={{ color: 'var(--color-text-inverse)' }}>Trusted by thousands</h2>
+            <h2 className="text-center mb-4" style={{ color: 'var(--color-text-inverse)' }}>What people are saying.</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ marginTop: 'var(--space-12)' }}>
             <div className="card card-dark reveal" ref={setRevealRef(revealIndex++)}>
-              <p className="testimonial-quote">&ldquo;I&rsquo;d been ignoring a patch on my arm for months. NIVARA flagged it as something worth checking — my dermatologist confirmed it needed treatment. Caught early because of this.&rdquo;</p>
+              <p className="testimonial-quote">&ldquo;I had been putting off checking a patch on my arm for months. The scan flagged it clearly and I finally booked a doctor. Turned out to be something that needed early attention.&rdquo;</p>
               <div className="testimonial-author">
-                <div className="testimonial-initial">P</div>
+                <div className="testimonial-initial">E</div>
                 <div>
-                  <strong>Priya Venkataraman</strong>
-                  <span>Software Engineer, Bengaluru</span>
+                  <strong>NIVARA User</strong>
+                  <span>Bengaluru</span>
                 </div>
               </div>
             </div>
 
             <div className="card card-dark reveal" ref={setRevealRef(revealIndex++)}>
-              <p className="testimonial-quote">&ldquo;The kiosk at my college hospital was so easy to use. Got results in minutes and booked a consultation right after. No long queues, no waiting weeks for an appointment.&rdquo;</p>
+              <p className="testimonial-quote">&ldquo;Simple to use and the results actually made sense. It did not just say see a doctor. It told me what it might be and why.&rdquo;</p>
               <div className="testimonial-author">
-                <div className="testimonial-initial">A</div>
+                <div className="testimonial-initial">E</div>
                 <div>
-                  <strong>Arjun Nair</strong>
-                  <span>College Student, Kochi</span>
+                  <strong>NIVARA User</strong>
+                  <span>Kochi</span>
                 </div>
               </div>
             </div>
 
             <div className="card card-dark reveal" ref={setRevealRef(revealIndex++)}>
-              <p className="testimonial-quote">&ldquo;I&rsquo;ve been recommending NIVARA to patients who can&rsquo;t access specialists easily. The differential output is well-structured and genuinely useful for primary care screening.&rdquo;</p>
+              <p className="testimonial-quote">&ldquo;The differential output is structured in a way that is genuinely useful for primary care. I have started recommending it to patients who cannot access a specialist easily.&rdquo;</p>
               <div className="testimonial-author">
-                <div className="testimonial-initial">M</div>
+                <div className="testimonial-initial">G</div>
                 <div>
-                  <strong>Dr. Meenakshi Subramaniam</strong>
-                  <span>General Practitioner, Chennai</span>
+                  <strong>General Practitioner</strong>
+                  <span>Chennai</span>
                 </div>
               </div>
             </div>
@@ -354,12 +357,11 @@ export default function HomePage() {
       <section className="section cta-section">
         <div className="container">
           <div className="cta-content reveal" ref={setRevealRef(revealIndex++)}>
-            <span className="section-label section-label-light" style={{ marginBottom: 'var(--space-6)', display: 'inline-block' }}>Begin Your Journey</span>
-            <h2 className="mb-6">Your skin&#39;s guardian,<br />perfected.</h2>
-            <p className="mb-8">Join thousands who trust NIVARA to monitor, understand, and protect their skin.</p>
+            <span className="section-label section-label-light" style={{ marginBottom: 'var(--space-6)', display: 'inline-block' }}>Get Started</span>
+            <h2 className="mb-6">Try it now.<br />No device needed.</h2>
+            <p className="mb-8">The demo is free. Upload a photo of your concern and receive a full AI assisted differential diagnosis. No appointment. No equipment. No cost.</p>
             <div className="flex gap-4 justify-center" style={{ flexWrap: 'wrap' }}>
-              <Link href="/buy" className="btn btn-accent btn-large">Buy Device — $299</Link>
-              <Link href="/features" className="btn btn-outline btn-large" style={{ borderColor: 'rgba(250,248,244,0.12)', color: 'var(--color-text-inverse)' }}>Explore Technology</Link>
+              <Link href="/demo" className="btn btn-accent btn-large">Try the Free Demo</Link>
             </div>
           </div>
         </div>

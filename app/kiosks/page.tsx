@@ -6,10 +6,10 @@ import Footer from '@/components/Footer';
 import styles from './kiosks.module.css';
 
 const kiosks = [
-  { name: 'Wellness Center Downtown', address: '123 Main Street, Suite 100', city: 'San Francisco, CA 94102', category: 'Wellness', distance: '0.5 mi' },
-  { name: 'TechMed Clinic', address: '456 Market Street', city: 'San Francisco, CA 94103', category: 'Medical', distance: '1.2 mi' },
-  { name: 'Premium Health Store', address: '789 Valencia Street', city: 'San Francisco, CA 94110', category: 'Retail', distance: '2.1 mi' },
-  { name: 'Dermatology Associates', address: '321 California Street, Floor 5', city: 'San Francisco, CA 94104', category: 'Medical', distance: '2.8 mi' },
+  { name: 'Apollo Hospital', address: '154/11, Bannerghatta Road', city: 'Bengaluru, Karnataka 560076', category: 'Medical', distance: '0.5 mi' },
+  { name: 'Manipal Hospital', address: '98, HAL Airport Road', city: 'Bengaluru, Karnataka 560017', category: 'Medical', distance: '1.2 mi' },
+  { name: 'Forum Mall', address: '21, Hosur Road, Koramangala', city: 'Bengaluru, Karnataka 560095', category: 'Retail', distance: '2.1 mi' },
+  { name: 'Government General Hospital', address: 'Park Town', city: 'Chennai, Tamil Nadu 600003', category: 'Medical', distance: '2.8 mi' },
 ];
 
 const categories = ['All', 'Retail', 'Medical', 'Wellness'];
@@ -31,19 +31,19 @@ export default function KiosksPage() {
         color: '#C9A84C',
         letterSpacing: '0.01em',
       }}>
-        NIVARA kiosk locations shown are demonstrations. Real kiosks coming soon.
+        Kiosk locations shown are demonstrations of the platform. Real deployments are in progress.
       </div>
       <section className="page-hero sacred-pattern royal-bar">
         <div className="container">
-          <span className="section-label slide-up">Locations</span>
+          <span className="section-label slide-up">Kiosk Network</span>
           <div className="divider slide-up"><span className="divider-gem"></span></div>
-          <h1 className="text-center mb-6 slide-up" style={{ animationDelay: '0.05s' }}>Find a kiosk near you</h1>
+          <h1 className="text-center mb-6 slide-up" style={{ animationDelay: '0.05s' }}>Bringing NIVARA closer to you.</h1>
           <p className="text-center font-accent text-secondary mb-12 slide-up" style={{ animationDelay: '0.15s', maxWidth: '480px', margin: '0 auto', fontSize: '1.25rem' }}>
-            Try NIVARA at one of our partner locations before you buy
+            We are building a network of NIVARA kiosks in hospitals, clinics, and public spaces so clinical grade skin screening is never far away. Deployments beginning soon.
           </p>
 
           <div className="search-container reveal">
-            <input type="text" className="search-input" placeholder="Enter your city or postal code" />
+            <input type="text" className="search-input" placeholder="Search by city or area" />
             <button className="search-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                 <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="2" />
@@ -80,7 +80,10 @@ export default function KiosksPage() {
             </div>
 
             <div className="results-container">
-              <h3 className="mb-6">Nearby locations</h3>
+              <h3 className="mb-6">Demo Locations</h3>
+              <p style={{ fontSize: 'var(--font-size-sm)', color: 'var(--color-text-secondary)', marginBottom: 'var(--space-6)' }}>
+                These are demonstration entries. Real kiosk locations will appear here as deployments go live.
+              </p>
               {filtered.map((kiosk, i) => (
                 <div key={i} className="kiosk-card reveal" style={{ position: 'relative' }}>
                   <span style={{
@@ -112,12 +115,12 @@ export default function KiosksPage() {
       <section className="section cta-section">
         <div className="container">
           <div className="cta-content reveal">
-            <span className="section-label section-label-light" style={{ marginBottom: 'var(--space-6)', display: 'inline-block' }}>Own One</span>
-            <h2 className="mb-6">Ready to get your own?</h2>
+            <span className="section-label section-label-light" style={{ marginBottom: 'var(--space-6)', display: 'inline-block' }}>Try It Now</span>
+            <h2 className="mb-6">Experience NIVARA today.</h2>
             <p className="mb-8" style={{ fontFamily: 'var(--font-family-accent)', fontSize: 'var(--font-size-lg)' }}>
-              Purchase a NIVARA device and start tracking your skin health from home.
+              The demo is free and available now. Upload a photo and receive a full AI assisted differential diagnosis in under a minute.
             </p>
-            <Link href="/buy" className="btn btn-accent btn-large">Buy Device — $299</Link>
+            <Link href="/demo" className="btn btn-accent btn-large">Try the Free Demo</Link>
           </div>
         </div>
       </section>

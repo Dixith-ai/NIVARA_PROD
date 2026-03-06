@@ -61,3 +61,36 @@ export async function appendFeedbackRow(data: Record<string, unknown>) {
         requestBody: { values: [row] },
     });
 }
+
+export async function appendWaitlistRow(data: {
+    firstName: string;
+    email: string;
+    city: string;
+    uid: string | null;
+    joinedAt: string;
+}): Promise<void> {
+    const auth = new google.auth.GoogleAuth({
+        credentials: {
+            client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+            private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        },
+        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
+
+    const sheets = google.sheets({ version: 'v4', auth });
+
+    const row = [
+        data.joinedAt,
+        data.firstName,
+        data.email,
+        data.city,
+        data.uid || 'Anonymous',
+    ];
+
+    await sheets.spreadsheets.values.append({
+        spreadsheetId: process.env.GOOGLE_SHEETS_ID,
+        range: 'Waitlist!A1',
+        valueInputOption: 'RAW',
+        requestBody: { values: [row] },
+    });
+}

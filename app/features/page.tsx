@@ -4,8 +4,8 @@ import Footer from '@/components/Footer';
 import styles from './features.module.css';
 
 export const metadata: Metadata = {
-  title: 'Technology — NIVARA',
-  description: 'NIVARA Technology — Clinical-grade imaging, AI analysis, intelligent tracking. Indigenously built in India.',
+  title: 'How It Works — NIVARA',
+  description: 'NIVARA combines structured imaging with AI assisted differential diagnosis. Clinical thinking, accessible to everyone.',
 };
 
 export default function FeaturesPage() {
@@ -14,12 +14,11 @@ export default function FeaturesPage() {
       {/* HERO */}
       <section className="page-hero sacred-pattern royal-bar">
         <div className="container">
-          <span className="section-label slide-up">Technology</span>
+          <span className="section-label slide-up">How It Works</span>
           <div className="divider slide-up reveal"><span className="divider-gem"></span></div>
-          <h1 className="slide-up" style={{ animationDelay: '0.05s' }}>Technology built for<br /><em>precision</em></h1>
+          <h1 className="slide-up" style={{ animationDelay: '0.05s' }}>Clinical thinking.<br /><em>Accessible to everyone.</em></h1>
           <p className="hero-subtitle font-accent slide-up" style={{ animationDelay: '0.15s' }}>
-            Clinical-grade hardware meets intelligent software.<br />
-            Every detail engineered for accuracy.
+            NIVARA combines structured imaging with AI assisted differential diagnosis. The same framework a dermatologist uses, available without a clinic visit.
           </p>
         </div>
       </section>
@@ -49,16 +48,16 @@ export default function FeaturesPage() {
               </div>
             </div>
             <div className="feature-details">
-              <span className="feature-label">Hardware</span>
-              <h2 className="mb-6">Precision imaging device</h2>
+              <span className="feature-label">The Device</span>
+              <h2 className="mb-6">A purpose built skin imaging device.</h2>
               <p className="text-large text-secondary mb-8">
-                Compact, portable, and powerful. The NIVARA device captures clinical-grade images with exceptional clarity and detail.
+                The NIVARA device is designed for one thing. Capturing standardised, high quality skin images that produce consistent, clinically useful results. Currently in development.
               </p>
               <div className="spec-list">
-                <div className="spec-item"><h4>20MP Sensor</h4><p className="text-secondary">High-resolution imaging captures microscopic detail</p></div>
-                <div className="spec-item"><h4>10x Magnification</h4><p className="text-secondary">See what&#39;s invisible to the naked eye</p></div>
-                <div className="spec-item"><h4>LED Ring Light</h4><p className="text-secondary">Consistent, shadow-free illumination</p></div>
-                <div className="spec-item"><h4>Wireless Sync</h4><p className="text-secondary">Instant transfer to your dashboard</p></div>
+                <div className="spec-item"><h4>Standardised Imaging</h4><p className="text-secondary">Captures consistent images regardless of lighting conditions or user technique.</p></div>
+                <div className="spec-item"><h4>Controlled Illumination</h4><p className="text-secondary">Built in lighting eliminates shadows and flash artefacts that distort skin tone and texture.</p></div>
+                <div className="spec-item"><h4>Portable</h4><p className="text-secondary">Compact enough to carry. Designed for home use, clinic integration, and kiosk deployment.</p></div>
+                <div className="spec-item"><h4>Wireless Sync</h4><p className="text-secondary">Connects directly to your NIVARA account. Results available instantly on any device.</p></div>
               </div>
             </div>
           </div>
@@ -70,16 +69,16 @@ export default function FeaturesPage() {
         <div className="container">
           <div className="feature-module reverse reveal">
             <div className="feature-details">
-              <span className="feature-label accent">AI Technology</span>
-              <h2 className="mb-6 text-inverse">Advanced AI analysis</h2>
+              <span className="feature-label accent">The Analysis</span>
+              <h2 className="mb-6 text-inverse">Not one answer. A ranked differential.</h2>
               <p className="text-large text-secondary mb-8">
-                Proprietary algorithms trained on millions of images detect patterns, changes, and anomalies with exceptional accuracy.
+                Most consumer skin tools return a single condition name. NIVARA evaluates multiple possible conditions, assigns confidence scores to each, and presents them in order of likelihood. The way clinical differential diagnosis actually works.
               </p>
               <div className="spec-list">
-                <div className="spec-item"><h4 className="text-inverse">Pattern Recognition</h4><p className="text-secondary">Identifies subtle changes over time</p></div>
-                <div className="spec-item"><h4 className="text-inverse">Anomaly Detection</h4><p className="text-secondary">Flags areas requiring attention</p></div>
-                <div className="spec-item"><h4 className="text-inverse">Trend Analysis</h4><p className="text-secondary">Tracks improvement or deterioration</p></div>
-                <div className="spec-item"><h4 className="text-inverse">Personalized Insights</h4><p className="text-secondary">Recommendations based on your unique profile</p></div>
+                <div className="spec-item"><h4 className="text-inverse">Differential Framework</h4><p className="text-secondary">Evaluates conditions in parallel, not in sequence. Every result includes alternative possibilities.</p></div>
+                <div className="spec-item"><h4 className="text-inverse">Confidence Scoring</h4><p className="text-secondary">Each condition is assigned a confidence percentage based on visual pattern analysis.</p></div>
+                <div className="spec-item"><h4 className="text-inverse">Condition Descriptions</h4><p className="text-secondary">Every result includes a plain language explanation of what the condition is and what to watch for.</p></div>
+                <div className="spec-item"><h4 className="text-inverse">Not a Diagnosis</h4><p className="text-secondary">NIVARA is a screening tool. Results are a starting point for professional consultation, not a replacement.</p></div>
               </div>
             </div>
             <div className="feature-visual">
@@ -130,16 +129,16 @@ export default function FeaturesPage() {
               </div>
             </div>
             <div className="feature-details">
-              <span className="feature-label">Platform</span>
-              <h2 className="mb-6">Intelligent tracking dashboard</h2>
+              <span className="feature-label">The Platform</span>
+              <h2 className="mb-6">Your skin history, in one place.</h2>
               <p className="text-large text-secondary mb-8">
-                Visualize your skin&#39;s evolution with comprehensive timeline tracking and detailed analytics.
+                Every scan you take is stored against your profile. Track changes over time, compare results, and share your history directly with a dermatologist.
               </p>
               <div className="spec-list">
-                <div className="spec-item"><h4>Timeline Visualization</h4><p className="text-secondary">See your entire history at a glance</p></div>
-                <div className="spec-item"><h4>Comparison Tools</h4><p className="text-secondary">Side-by-side analysis of any two scans</p></div>
-                <div className="spec-item"><h4>Progress Metrics</h4><p className="text-secondary">Quantifiable measurements over time</p></div>
-                <div className="spec-item"><h4>Export &amp; Share</h4><p className="text-secondary">Generate reports for professionals</p></div>
+                <div className="spec-item"><h4>Scan History</h4><p className="text-secondary">Every scan stored chronologically with full results and condition breakdowns.</p></div>
+                <div className="spec-item"><h4>Progress Tracking</h4><p className="text-secondary">See how a condition has changed between scans. Improving, stable, or worth a closer look.</p></div>
+                <div className="spec-item"><h4>Shareable Reports</h4><p className="text-secondary">Generate a clean PDF report from any scan to share with your doctor or keep for your records.</p></div>
+                <div className="spec-item"><h4>Appointment Integration</h4><p className="text-secondary">Book a dermatologist consultation directly from your scan report, without leaving the platform.</p></div>
               </div>
             </div>
           </div>
@@ -151,16 +150,16 @@ export default function FeaturesPage() {
         <div className="container">
           <div className="feature-module reverse reveal">
             <div className="feature-details">
-              <span className="feature-label">Collaboration</span>
-              <h2 className="mb-6">Professional access</h2>
+              <span className="feature-label">The Doctors</span>
+              <h2 className="mb-6">When the scan says consult someone.</h2>
               <p className="text-large text-secondary mb-8">
-                Connect with dermatologists and healthcare professionals for expert consultation and guidance.
+                NIVARA connects you with verified dermatologists for proper evaluation when your results warrant it. Browse by specialisation, location, and availability and book directly through the platform.
               </p>
               <div className="spec-list">
-                <div className="spec-item"><h4>Secure Sharing</h4><p className="text-secondary">End-to-end encrypted data transfer</p></div>
-                <div className="spec-item"><h4>Consultation Booking</h4><p className="text-secondary">Schedule virtual or in-person appointments</p></div>
-                <div className="spec-item"><h4>Professional Network</h4><p className="text-secondary">Access verified dermatologists</p></div>
-                <div className="spec-item"><h4>Treatment Tracking</h4><p className="text-secondary">Monitor prescribed treatment effectiveness</p></div>
+                <div className="spec-item"><h4>Verified Network</h4><p className="text-secondary">Every dermatologist on NIVARA is verified and licensed to practice.</p></div>
+                <div className="spec-item"><h4>Direct Booking</h4><p className="text-secondary">Schedule consultations directly from your scan report or browse the full directory.</p></div>
+                <div className="spec-item"><h4>Specialisation Filters</h4><p className="text-secondary">Find doctors who specialise in the condition your scan identified.</p></div>
+                <div className="spec-item"><h4>Consultation History</h4><p className="text-secondary">All appointments and doctor interactions stored in your account.</p></div>
               </div>
             </div>
             <div className="feature-visual">
@@ -200,47 +199,13 @@ export default function FeaturesPage() {
       {/* SPECS */}
       <section className="section">
         <div className="container">
-          <h2 className="text-center mb-16 reveal">Technical specifications</h2>
-          <div className="specs-grid reveal">
-            <div className="spec-category">
-              <h4 className="mb-6">Device</h4>
-              <table className="spec-table">
-                <tbody>
-                  <tr><td>Dimensions</td><td>120 × 45 × 30 mm</td></tr>
-                  <tr><td>Weight</td><td>180g</td></tr>
-                  <tr><td>Battery</td><td>2000mAh Li-ion</td></tr>
-                  <tr><td>Battery Life</td><td>500+ scans</td></tr>
-                  <tr><td>Charging</td><td>USB-C, 2 hours</td></tr>
-                  <tr><td>Connectivity</td><td>Bluetooth 5.2, Wi-Fi</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="spec-category">
-              <h4 className="mb-6">Imaging</h4>
-              <table className="spec-table">
-                <tbody>
-                  <tr><td>Sensor</td><td>20MP CMOS</td></tr>
-                  <tr><td>Resolution</td><td>5472 × 3648 pixels</td></tr>
-                  <tr><td>Magnification</td><td>10x optical</td></tr>
-                  <tr><td>Focus</td><td>Auto-focus</td></tr>
-                  <tr><td>Illumination</td><td>LED ring light, 6500K</td></tr>
-                  <tr><td>Image Format</td><td>RAW, JPEG</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="spec-category">
-              <h4 className="mb-6">Software</h4>
-              <table className="spec-table">
-                <tbody>
-                  <tr><td>Platforms</td><td>iOS, Android, Web</td></tr>
-                  <tr><td>AI Engine</td><td>Proprietary neural network</td></tr>
-                  <tr><td>Storage</td><td>Unlimited cloud storage</td></tr>
-                  <tr><td>Encryption</td><td>AES-256</td></tr>
-                  <tr><td>Compliance</td><td>HIPAA, GDPR</td></tr>
-                  <tr><td>Updates</td><td>Over-the-air (OTA)</td></tr>
-                </tbody>
-              </table>
-            </div>
+          <div className="reveal" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+            <span className="section-label">Device Specifications</span>
+            <h2 className="mb-6" style={{ marginTop: 'var(--space-4)' }}>Full specifications coming soon.</h2>
+            <p className="text-large text-secondary mb-8">
+              The NIVARA device is currently in development. Detailed technical specifications will be published ahead of launch.
+            </p>
+            <Link href="/demo" className="btn btn-primary btn-large">Try the Free Demo</Link>
           </div>
         </div>
       </section>
@@ -249,12 +214,12 @@ export default function FeaturesPage() {
       <section className="section cta-section">
         <div className="container">
           <div className="cta-content reveal">
-            <span className="section-label section-label-light" style={{ marginBottom: 'var(--space-6)', display: 'inline-block' }}>Get Started</span>
-            <h2 className="mb-6">Experience the technology</h2>
+            <span className="section-label section-label-light" style={{ marginBottom: 'var(--space-6)', display: 'inline-block' }}>Try It Now</span>
+            <h2 className="mb-6">The demo is live. No device needed.</h2>
             <p className="mb-8" style={{ fontFamily: 'var(--font-family-accent)', fontSize: 'var(--font-size-lg)' }}>
-              Order your NIVARA device and take control of your skin health.
+              Experience the differential diagnosis system directly in your browser. Free, instant, no equipment required.
             </p>
-            <Link href="/buy" className="btn btn-accent btn-large">Buy Device — $299</Link>
+            <Link href="/demo" className="btn btn-accent btn-large">Try the Free Demo</Link>
           </div>
         </div>
       </section>

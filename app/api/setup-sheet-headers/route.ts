@@ -1,15 +1,26 @@
 import { NextResponse } from 'next/server';
-import { setupSheetHeaders } from '@/lib/setupSheetHeaders';
+import { setupSheetHeaders, setupWaitlistSheet } from '@/lib/setupSheetHeaders';
 
 export async function GET() {
     try {
-        const result = await setupSheetHeaders();
+        const feedbackResult = await setupSheetHeaders();
+        const waitlistResult = await setupWaitlistSheet();
 
-        if (result.status === 'exists') {
-            return NextResponse.json({ message: 'Headers already set' });
+        const messages = [];
+        
+        if (feedbackResult.status === 'exists') {
+            messages.push('Feedback headers already set');
+        } else {
+            messages.push('Feedback headers written successfully');
         }
 
-        return NextResponse.json({ message: 'Headers written successfully' });
+        if (waitlistResult.status === 'exists') {
+            messages.push('Waitlist headers already set');
+        } else {
+            messages.push('Waitlist headers written successfully');
+        }
+
+        return NextResponse.json({ message: messages.join('. ') });
     } catch (err) {
         console.error('setup-sheet-headers error:', err);
         return NextResponse.json({ error: 'Failed to set headers' }, { status: 500 });

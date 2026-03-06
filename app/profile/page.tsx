@@ -552,9 +552,9 @@ export default function ProfilePage() {
                                     /* ─ Unused state ─ */
                                     <div className={styles.unusedScanCtaCard}>
                                         <span className="section-label section-label-light">Free Trial</span>
-                                        <h3 className={styles.unusedScanTitle}>Try Your Free Skin Scan</h3>
+                                        <h3 className={styles.unusedScanTitle}>Try your free skin scan.</h3>
                                         <p className={styles.unusedScanDesc}>
-                                            Get an AI-powered differential diagnosis of your skin concern — no device required. Takes less than 2 minutes.
+                                            Get an AI assisted differential diagnosis of your skin concern. No device required. Takes less than 2 minutes.
                                         </p>
                                         <Link href="/demo" className="btn btn-accent btn-large">
                                             Start Demo Scan

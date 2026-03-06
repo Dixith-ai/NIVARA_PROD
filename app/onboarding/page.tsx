@@ -40,12 +40,12 @@ function isAtLeast13(dob: string): boolean {
 
 /* Skin type tile data */
 const SKIN_TYPES = [
-    { value: 'Normal', emoji: '✨', label: 'Normal', desc: 'Balanced, not too oily or dry' },
-    { value: 'Oily', emoji: '💦', label: 'Oily', desc: 'Shiny, enlarged pores' },
-    { value: 'Dry', emoji: '💧', label: 'Dry', desc: 'Tight, flaky, rough texture' },
-    { value: 'Combination', emoji: '🌗', label: 'Combination', desc: 'Oily T-zone, dry cheeks' },
-    { value: 'Sensitive', emoji: '🌿', label: 'Sensitive', desc: 'Easily irritated, reacts quickly' },
-    { value: 'Not Sure', emoji: '🔍', label: 'Not Sure', desc: "I'm not sure yet" },
+    { value: 'Normal', emoji: '', label: 'Normal', desc: 'Balanced. Not too oily or dry.' },
+    { value: 'Oily', emoji: '', label: 'Oily', desc: 'Shiny, with enlarged pores.' },
+    { value: 'Dry', emoji: '', label: 'Dry', desc: 'Tight, flaky, or rough in texture.' },
+    { value: 'Combination', emoji: '', label: 'Combination', desc: 'Oily through the T zone, dry elsewhere.' },
+    { value: 'Sensitive', emoji: '', label: 'Sensitive', desc: 'Easily irritated or reactive.' },
+    { value: 'Not Sure', emoji: '', label: 'Not Sure', desc: 'I have not figured this out yet.' },
 ];
 
 const GENDER_OPTIONS = ['Male', 'Female', 'Non-binary', 'Prefer not to say'];
@@ -195,14 +195,14 @@ export default function OnboardingPage() {
                             Welcome to NIVARA{firstName ? `, ${firstName}` : ''}.
                         </h1>
                         <p className={styles.subtext}>
-                            Let&apos;s complete your profile. It takes less than a minute.
+                            A few quick details to set up your profile.
                         </p>
                         <button
                             className={styles.btnGold}
                             onClick={() => setStep(2)}
                             type="button"
                         >
-                            Get Started →
+                            Get Started
                         </button>
                     </div>
                 )}
@@ -211,7 +211,7 @@ export default function OnboardingPage() {
                 {step === 2 && (
                     <div key={2} className={styles.stepContent}>
                         <BackArrow onClick={() => setStep(1)} />
-                        <h2 className={styles.heading}>A little about you.</h2>
+                        <h2 className={styles.heading}>About you.</h2>
 
                         {/* Phone */}
                         <div className={styles.formGroup}>
@@ -265,7 +265,7 @@ export default function OnboardingPage() {
                             disabled={!step2Ready}
                             onClick={handleStep2Continue}
                         >
-                            Continue →
+                            Continue
                         </button>
                     </div>
                 )}
@@ -276,7 +276,7 @@ export default function OnboardingPage() {
                         <BackArrow onClick={() => setStep(2)} />
                         <h2 className={styles.heading}>Where are you based?</h2>
                         <p className={styles.subtext}>
-                            So we can show you nearby kiosks and dermatologists.
+                            We will use this to show you nearby kiosks and dermatologists in your area.
                         </p>
 
                         <div className={styles.formGroup}>
@@ -297,7 +297,7 @@ export default function OnboardingPage() {
                             disabled={!formData.location.trim()}
                             onClick={() => setStep(4)}
                         >
-                            Continue →
+                            Continue
                         </button>
                     </div>
                 )}
@@ -306,9 +306,9 @@ export default function OnboardingPage() {
                 {step === 4 && (
                     <div key={4} className={styles.stepContent}>
                         <BackArrow onClick={() => setStep(3)} />
-                        <h2 className={styles.heading}>What&apos;s your skin type?</h2>
+                        <h2 className={styles.heading}>Your skin type.</h2>
                         <p className={styles.subtext}>
-                            Optional — helps us personalise your results.
+                            Optional. Helps us personalise your results.
                         </p>
 
                         <div className={styles.tileGrid3}>
@@ -319,7 +319,6 @@ export default function OnboardingPage() {
                                     className={`${styles.tile} ${formData.skinType === s.value ? styles.tileSelected : ''}`}
                                     onClick={() => update('skinType', s.value)}
                                 >
-                                    <span className={styles.tileEmoji}>{s.emoji}</span>
                                     <span className={styles.tileLabel}>{s.label}</span>
                                     <span className={styles.tileDesc}>{s.desc}</span>
                                 </button>
@@ -332,7 +331,7 @@ export default function OnboardingPage() {
                                 className={styles.btnGold}
                                 onClick={() => setStep(5)}
                             >
-                                Continue →
+                                Continue
                             </button>
                             <button
                                 type="button"
@@ -351,7 +350,7 @@ export default function OnboardingPage() {
                         <BackArrow onClick={() => setStep(4)} />
                         <h2 className={styles.heading}>Add a profile photo.</h2>
                         <p className={styles.subtext}>
-                            Optional — you can always add one from your profile.
+                            Optional. You can always do this later from your profile.
                         </p>
 
                         <div className={styles.photoCircleWrap}>
@@ -389,7 +388,7 @@ export default function OnboardingPage() {
                                 disabled={submitting}
                                 onClick={handleComplete}
                             >
-                                {submitting ? 'Setting up your profile…' : 'Complete Setup →'}
+                                {submitting ? 'Setting up your profile…' : 'Complete Setup'}
                             </button>
                             <button
                                 type="button"
