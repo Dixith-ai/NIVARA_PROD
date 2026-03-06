@@ -365,11 +365,11 @@ Branch naming: `feature/` · `fix/` · `chore/` · `ci/` · `ml/`
 
 | Name | Title |
 |------|-------|
-| **Mufeez** | Research & Clinical Validation |
-| **Dixith Adithya** | Full Stack Engineer & IoT Architect |
-| **Chethan** | Operations, Deployment & IoT |
 | **Karthik H S** | ML Engineer & Frontend Engineer |
 | **Pratham Limbani** | ML Engineer & Product |
+| **Dixith Adithya** | Full Stack Engineer & IoT Architect |
+| **Chethan** | Operations, Deployment & IoT |
+| **Mufeez** | Research & Clinical Validation |
 
 ---
 
