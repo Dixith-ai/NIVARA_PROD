@@ -55,8 +55,8 @@
 
 .featuresPage :global(.device-showcase) {
   width: 100%;
-  height: 500px;
-  background: var(--gradient-dark);
+  height: 680px;
+  background: transparent;
   border-radius: var(--radius-2xl);
   box-shadow: 0 32px 64px rgba(26, 23, 20, 0.14), 0 0 0 1px rgba(149, 109, 31, 0.08);
   display: flex;
@@ -64,6 +64,7 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding: 0;
 }
 
 .featuresPage :global(.device-showcase)::before {
@@ -72,6 +73,7 @@
   color: rgba(250, 248, 244, 0.08);
   font-size: var(--font-size-5xl);
   letter-spacing: 0.15em;
+  display: none;
 }
 
 .featuresPage :global(.device-showcase)::after {

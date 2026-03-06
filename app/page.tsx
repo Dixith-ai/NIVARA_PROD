@@ -180,9 +180,11 @@ export default function HomePage() {
 
           <div className="hero-visual">
             <div className="device-placeholder">
-              <div className="device-inner">
-                <span className="device-logo">N</span>
-              </div>
+              <img
+                src="/images/nivara-device.webp"
+                alt="NIVARA skin scanning device"
+                className={styles.deviceImage}
+              />
             </div>
           </div>
         </div>

@@ -29,22 +29,16 @@ export default function FeaturesPage() {
           <div className="feature-module reveal">
             <div className="feature-visual">
               <div className="device-showcase" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{
-                  width: '100%', maxWidth: '320px',
-                  border: '1.5px solid var(--color-border-warm)',
-                  borderRadius: '16px',
-                  background: 'linear-gradient(145deg, #0e0c08 0%, #1a1510 60%, #221d14 100%)',
-                  padding: '3rem 2rem',
-                  textAlign: 'center',
-                  boxShadow: '0 0 40px rgba(212,175,98,0.06)',
-                }}>
-                  <div style={{ fontFamily: 'var(--font-family-display)', fontSize: '2.2rem', color: 'var(--color-accent)', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>NIVARA</div>
-                  <div style={{ fontFamily: 'var(--font-family-accent)', fontSize: '0.8rem', color: 'rgba(250,248,244,0.35)', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '2rem' }}>Scanner</div>
-                  <div style={{ width: '64px', height: '64px', borderRadius: '50%', border: '1.5px solid var(--color-border-warm)', margin: '0 auto 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
-                  </div>
-                  <div style={{ fontFamily: 'var(--font-family-accent)', fontSize: '0.72rem', color: 'rgba(250,248,244,0.3)', letterSpacing: '0.14em', textTransform: 'uppercase' }}>Clinical-grade · Portable</div>
-                </div>
+                <img
+                  src="/images/nivara-device-clinical.webp"
+                  alt="NIVARA device being used in a clinical setting"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                    borderRadius: 'var(--radius-2xl)',
+                  }}
+                />
               </div>
             </div>
             <div className="feature-details">

@@ -85,58 +85,22 @@
 }
 
 .homePage :global(.device-placeholder) {
-  width: 260px;
-  height: 370px;
-  background: var(--gradient-dark);
-  border-radius: var(--radius-2xl);
-  box-shadow: 0 32px 64px rgba(26, 23, 20, 0.14), 0 0 0 1px rgba(149, 109, 31, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+  animation: float 7s ease-in-out infinite;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
-.homePage :global(.device-placeholder)::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 56px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-  opacity: 0.6;
-}
-
-.homePage :global(.device-placeholder)::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(180deg, rgba(149, 109, 31, 0.04) 0%, transparent 40%);
-  pointer-events: none;
-}
-
-.homePage :global(.device-inner) {
-  width: calc(100% - 20px);
-  height: calc(100% - 32px);
-  border: 1px solid rgba(149, 109, 31, 0.08);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: var(--space-3);
-  position: relative;
-  z-index: 1;
-}
-
-.homePage :global(.device-logo) {
-  font-family: var(--font-family-display);
-  font-size: 3.5rem;
-  color: rgba(149, 109, 31, 0.12);
-  letter-spacing: 0.1em;
+.deviceImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  filter: drop-shadow(0 32px 64px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 8px 24px rgba(149, 109, 31, 0.22));
 }
 
 .homePage :global(.feature-icon) {
@@ -288,11 +252,6 @@
 
   .homePage :global(.hero-visual) {
     padding: var(--space-6) 0;
-  }
-
-  .homePage :global(.device-placeholder) {
-    width: 180px;
-    height: 250px;
   }
 
   .homePage :global(.hero-cta) {
