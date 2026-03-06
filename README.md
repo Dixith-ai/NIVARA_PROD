@@ -286,13 +286,13 @@ Branch naming convention:
 
 Built by the NIVARA founding team.
 
-| Name | Role |
-|------|------|
-| **Dixith Adithya** | Founder & Engineering Lead |
-| **Pratham Limbani** | Co-Founder |
-| **Karthik H S** | Technology |
-| **Chethan** | Operations |
-| **Mufeez** | Research |
+| Name | Title |
+|------|-------|
+| **Karthik H S** | Frontend Engineer |
+| **Dixith Adithya** | Full Stack Engineer & IoT Architect |
+| **Mufeez** | Research & Clinical Validation |
+| **Chethan** | Operations, Deployment & IoT |
+| **Pratham Limbani** | Product & Design |
 
 ---
 
@@ -320,7 +320,7 @@ This repository contains proprietary and confidential source code. Unauthorised 
 <br/>
 
 ```
-निवार  ·  NIVARA  ·  नि + वार  ·  Prevention + Strike
+·  NIVARA  ·
 ```
 
 *Precision skin health technology. Indigenously crafted in India.*
