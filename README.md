@@ -1,303 +1,444 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=200&section=header&text=NIVARA&fontSize=80&fontAlignY=38&desc=Clinical-grade%20skin%20intelligence%2C%20built%20in%20India&descAlignY=58&descSize=16&fontColor=C4973A&descColor=e8dcc8&animation=fadeIn">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=200&section=header&text=NIVARA&fontSize=80&fontAlignY=38&desc=Clinical-grade%20skin%20intelligence%2C%20built%20in%20India&descAlignY=58&descSize=16&fontColor=C4973A&descColor=e8dcc8&animation=fadeIn" width="100%" alt="NIVARA">
+</picture>
+
 <br/>
 
 ```
-███╗   ██╗██╗██╗   ██╗ █████╗ ██████╗  █████╗
-████╗  ██║██║██║   ██║██╔══██╗██╔══██╗██╔══██╗
-██╔██╗ ██║██║██║   ██║███████║██████╔╝███████║
-██║╚██╗██║██║╚██╗ ██╔╝██╔══██║██╔══██╗██╔══██║
-██║ ╚████║██║ ╚████╔╝ ██║  ██║██║  ██║██║  ██║
-╚═╝  ╚═══╝╚═╝  ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝
+नि + वार  ═══  Prevention + Strike
 ```
 
-**Clinical-grade skin analysis. No appointment. No waiting room. No specialist required.**
+<br/>
+
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/Dixith-ai/NIVARA_PROD/actions/workflows/ci.yml">
+<img src="https://github.com/Dixith-ai/NIVARA_PROD/actions/workflows/ci.yml/badge.svg" alt="CI Status"/>
+</a>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Next.js-16.1.6-000000?style=flat-square&logo=next.js&logoColor=white"/>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/TypeScript-strict-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/TensorFlow-2.16-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/FastAPI-0.111-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="https://img.shields.io/badge/Firebase-Auth%20+%20DB-FFCA28?style=flat-square&logo=firebase&logoColor=black"/>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white"/>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Vercel-Frontend-000000?style=flat-square&logo=vercel&logoColor=white"/>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/Render-ML%20API-46E3B7?style=flat-square&logo=render&logoColor=white"/>
+</td>
+<td align="center">
+<img src="https://img.shields.io/badge/License-Proprietary-C4973A?style=flat-square"/>
+</td>
+</tr>
+</table>
 
 <br/>
 
-[![CI](https://github.com/Dixith-ai/NIVARA_PROD/actions/workflows/ci.yml/badge.svg)](https://github.com/Dixith-ai/NIVARA_PROD/actions/workflows/ci.yml)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-16.1.6-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Firebase](https://img.shields.io/badge/Firebase-12-FFCA28?style=flat&logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16-FF6F00?style=flat&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
-[![Deployed on Vercel](https://img.shields.io/badge/Frontend-Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://www.nivara.life)
-[![ML on Render](https://img.shields.io/badge/ML%20API-Render-46E3B7?style=flat&logo=render&logoColor=white)](https://render.com)
-[![License](https://img.shields.io/badge/License-Proprietary-C4973A?style=flat)](#license)
+<a href="https://www.nivara.life/demo">
+<img src="https://img.shields.io/badge/⚡_Try_Live_Demo-nivara.life%2Fdemo-C4973A?style=for-the-badge&labelColor=1a1a1a" alt="Live Demo"/>
+</a>
+&nbsp;&nbsp;
+<a href="https://github.com/Dixith-ai/NIVARA_PROD/actions">
+<img src="https://img.shields.io/badge/📊_Pipeline_Status-GitHub_Actions-2d333b?style=for-the-badge&labelColor=1a1a1a" alt="Pipeline"/>
+</a>
 
-<br/>
-
-[**→ Live Demo**](https://www.nivara.life/demo) · [**→ Website**](https://www.nivara.life) · [**→ ML API**](https://github.com/Dixith-ai/nivara-api) · [**→ CI/CD Status**](https://github.com/Dixith-ai/NIVARA_PROD/actions)
+</div>
 
 <br/>
 
 ---
 
+<div align="center">
+
+## `∿` The Premise
+
 </div>
 
-## What Is NIVARA?
+> **India has 1 dermatologist per 100,000 people.**
+> Most skin conditions — trivially treatable when caught early — go undiagnosed for months. Not because medicine failed. Because access did.
 
-NIVARA is a precision skin health platform built indigenously in India. Upload a photo of a skin concern and receive a **structured differential diagnosis** — not one guess, but a ranked analysis of the most likely conditions with confidence scores, the way a clinician actually thinks.
+NIVARA is a precision skin analysis platform built indigenously in India. Upload a photo. Receive a **ranked differential diagnosis** — not a single guess, but a confidence-weighted breakdown of the most probable conditions, structured the way a clinician actually reasons.
 
-No device required for the demo. No appointment. No waiting room. A custom-trained deep learning model classifies 10 dermatological conditions and returns confidence-scored predictions in under a minute.
+No appointment. No waiting room. No specialist required.
+
+```
+Upload image  →  CNN-GRU inference  →  Ranked predictions  →  Book a dermatologist
+    ⬆                  ⬆                       ⬆                      ⬆
+  Browser          Render.com              Confidence %            Firebase
+```
 
 > *"The breakdown was more detailed than I expected. The confidence scores made it feel credible."*
 > — Early User, Bengaluru
 
----
-
-## The Problem We're Solving
-
-India has **1 dermatologist per 100,000 people**. Most people with skin concerns either ignore them, self-diagnose incorrectly, or wait months for a specialist. Early-stage conditions that are trivially treatable become serious because nobody caught them.
-
-NIVARA bridges this gap with:
-
-- **Differential diagnosis** — not a single prediction, a ranked clinical framework
-- **Confidence scoring** — so users understand the certainty behind each result
-- **Dermatologist access** — verified specialists bookable directly from the result
-- **Kiosk deployment** — bringing screening to clinics, hospitals, and pharmacies
-- **IoT device** — a purpose-built handheld skin imaging device *(in development)*
+<br/>
 
 ---
 
-## System Architecture
+<div align="center">
 
-NIVARA is a two-service system. The frontend web platform and the ML inference API are independent services, deployed separately, communicating over HTTP.
+## `⬡` System Architecture
+
+</div>
+
+NIVARA runs as **two independent services** — a Next.js web platform and a FastAPI ML inference engine — communicating over HTTP. Neither knows about the other's internals.
 
 ```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           NIVARA PLATFORM                               │
-├───────────────────────────────┬─────────────────────────────────────────┤
-│      WEB PLATFORM             │         ML INFERENCE API                │
-│      (This Repo)              │         (nivara-api)                    │
-│                               │                                         │
-│  Next.js 16 (App Router)      │  FastAPI (Python 3.11)                  │
-│  TypeScript (strict)          │  TensorFlow 2.16 (CPU)                  │
-│  Firebase Auth + Firestore    │  Custom CNN-GRU Model                   │
-│  Resend (Email)               │  10-class skin classification           │
-│  Google Sheets (Feedback)     │                                         │
-│  GA4 + Microsoft Clarity      │  POST /predict → confidence scores      │
-│                               │                                         │
-│  Deployed: Vercel             │  Deployed: Render.com                   │
-└───────────────────────────────┴─────────────────────────────────────────┘
-                │                              │
-                │    HTTP (image upload)        │
-                └──────────────────────────────┘
-                         Frontend calls
-                     POST /predict with image
-                   ← Returns ranked predictions
+╔══════════════════════════════════════════════════════════════════════════╗
+║                         N I V A R A   S Y S T E M                       ║
+╠══════════════════════════════════════╦═══════════════════════════════════╣
+║         WEB PLATFORM                 ║        ML INFERENCE ENGINE        ║
+║         github: NIVARA_PROD          ║        github: nivara-api         ║
+║                                      ║                                   ║
+║  ▸ Next.js 16  (App Router)          ║  ▸ FastAPI        (Python 3.11)   ║
+║  ▸ TypeScript  (strict mode)         ║  ▸ TensorFlow     (2.16 CPU)      ║
+║  ▸ Firebase    (Auth + Firestore)    ║  ▸ CNN-GRU Model  (custom arch)   ║
+║  ▸ Resend      (Transactional email) ║  ▸ 10-class skin classification   ║
+║  ▸ GA4 + Clarity  (Analytics)        ║                                   ║
+║  ▸ Google Sheets  (Feedback log)     ║  POST /predict  →  JSON scores    ║
+║                                      ║                                   ║
+║  ⬡  Deployed: Vercel                ║  ⬡  Deployed: Render.com          ║
+╚══════════════════════════════════════╩═══════════════════════════════════╝
+              ║                                   ║
+              ║      multipart/form-data          ║
+              ╚══════════  image upload  ══════════╝
+                        ← ranked predictions
 ```
+
+<br/>
 
 ---
 
-## The ML Model
+<div align="center">
 
-The inference engine is a **custom CNN-GRU hybrid** — a convolutional network for spatial feature extraction feeding into a gated recurrent unit for sequential pattern recognition. Trained to classify 10 dermatological conditions from a single skin image.
+## `◈` The ML Engine
 
-### Architecture
+</div>
 
-```
-Input Image (128×128 RGB)
-        │
-        ▼
-Conv2D(32) → ReLU → MaxPool        # Low-level feature extraction
-        │
-        ▼
-Conv2D(64) → ReLU → MaxPool        # Mid-level pattern detection
-        │
-        ▼
-Conv2D(128) → ReLU → MaxPool       # High-level feature maps
-        │
-        ▼
-Reshape (spatial → sequential)     # Bridge CNN → RNN
-        │
-        ▼
-GRU(64)                            # Sequential pattern analysis
-        │
-        ▼
-Dropout(0.5)                       # Regularisation
-        │
-        ▼
-Dense(10, softmax)                 # 10-class probability output
-```
+The inference engine is a **custom CNN-GRU hybrid** — not a fine-tuned pretrained model. Built from scratch. Convolutional layers handle spatial feature extraction. A Gated Recurrent Unit processes sequential patterns across the feature map. The combination allows the model to reason about both texture and structural context simultaneously.
 
-### Classified Conditions
+> Built by Karthik H S and Pratham Limbani.
 
-| # | Condition | Category |
-|---|-----------|----------|
-| 1 | Eczema | Inflammatory |
-| 2 | Melanoma | Malignant |
-| 3 | Atopic Dermatitis | Inflammatory |
-| 4 | Basal Cell Carcinoma | Malignant |
-| 5 | Melanocytic Nevi | Benign |
-| 6 | Benign Keratosis-like Lesions | Benign |
-| 7 | Psoriasis / Lichen Planus | Inflammatory |
-| 8 | Seborrheic Keratoses | Benign |
-| 9 | Tinea / Ringworm / Candidiasis | Infectious |
-| 10 | Warts / Molluscum / Viral Infections | Infectious |
-
-### API Endpoints
+### Model Graph
 
 ```
-GET  /           → Health check, model status
-POST /predict    → Accepts image upload, returns ranked predictions
+ ┌─────────────────────────────────────────────────────┐
+ │  INPUT   128 × 128 × 3  (RGB)                        │
+ └────────────────────────┬────────────────────────────┘
+                          │
+          ┌───────────────▼──────────────────┐
+          │  Conv2D(32)  → ReLU → MaxPool     │  low-level texture
+          └───────────────┬──────────────────┘
+                          │
+          ┌───────────────▼──────────────────┐
+          │  Conv2D(64)  → ReLU → MaxPool     │  mid-level patterns
+          └───────────────┬──────────────────┘
+                          │
+          ┌───────────────▼──────────────────┐
+          │  Conv2D(128) → ReLU → MaxPool     │  high-level features
+          └───────────────┬──────────────────┘
+                          │
+          ┌───────────────▼──────────────────┐
+          │  Reshape  (spatial → sequential)  │  CNN → RNN bridge
+          └───────────────┬──────────────────┘
+                          │
+          ┌───────────────▼──────────────────┐
+          │  GRU(64)                          │  sequential reasoning
+          └───────────────┬──────────────────┘
+                          │
+          ┌───────────────▼──────────────────┐
+          │  Dropout(0.5)                     │  regularisation
+          └───────────────┬──────────────────┘
+                          │
+          ┌───────────────▼──────────────────┐
+          │  Dense(10, softmax)               │  10-class output
+          └──────────────────────────────────┘
 ```
 
-**Prediction response:**
+### What It Classifies
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Condition</th>
+<th>Category</th>
+<th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><code>01</code></td><td>Eczema</td><td>Inflammatory</td><td>🟡 Moderate</td></tr>
+<tr><td><code>02</code></td><td>Melanoma</td><td>Malignant</td><td>🔴 Critical</td></tr>
+<tr><td><code>03</code></td><td>Atopic Dermatitis</td><td>Inflammatory</td><td>🟡 Moderate</td></tr>
+<tr><td><code>04</code></td><td>Basal Cell Carcinoma</td><td>Malignant</td><td>🔴 Critical</td></tr>
+<tr><td><code>05</code></td><td>Melanocytic Nevi</td><td>Benign</td><td>🟢 Low</td></tr>
+<tr><td><code>06</code></td><td>Benign Keratosis-like Lesions</td><td>Benign</td><td>🟢 Low</td></tr>
+<tr><td><code>07</code></td><td>Psoriasis / Lichen Planus</td><td>Inflammatory</td><td>🟡 Moderate</td></tr>
+<tr><td><code>08</code></td><td>Seborrheic Keratoses</td><td>Benign</td><td>🟢 Low</td></tr>
+<tr><td><code>09</code></td><td>Tinea / Ringworm / Candidiasis</td><td>Infectious</td><td>🟠 Attention</td></tr>
+<tr><td><code>10</code></td><td>Warts / Molluscum / Viral Infections</td><td>Infectious</td><td>🟠 Attention</td></tr>
+</tbody>
+</table>
+
+### API Contract
+
+```
+GET  /            →  { status: "ok", model: "loaded", conditions: 10 }
+POST /predict     →  multipart/form-data  { file: <image> }
+```
+
 ```json
 {
   "predictions": [
-    { "condition": "Melanoma", "confidence": 85.3 },
-    { "condition": "Basal Cell Carcinoma", "confidence": 8.1 },
-    { "condition": "Eczema", "confidence": 3.2 },
-    ...
+    { "condition": "Melanoma",              "confidence": 85.3 },
+    { "condition": "Basal Cell Carcinoma",  "confidence":  8.1 },
+    { "condition": "Eczema",               "confidence":  3.2 },
+    { "condition": "...",                  "confidence":  "..." }
   ]
 }
 ```
 
-Results are sorted by confidence (descending). The frontend displays the top results as the differential diagnosis with ranked confidence scores.
+Results sorted by confidence descending. Frontend renders the top-N as the differential diagnosis.
+
+<br/>
 
 ---
 
-## Tech Stack
+<div align="center">
 
-### Web Platform
+## `⬡` Tech Stack
 
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| Framework | Next.js (App Router) | 16.1.6 |
-| Language | TypeScript (strict) | 5.x |
-| Auth & Database | Firebase | 12.x |
-| Email | Resend + React Email | 6.x |
-| Analytics | Google Analytics 4 + Microsoft Clarity | — |
-| Feedback Logging | Google Sheets API | v4 |
-| PDF Generation | pdf-lib | 1.17.x |
-| Deployment | Vercel | — |
-| CI/CD | GitHub Actions | — |
-| Node | 20 (pinned via .nvmrc) | 20.x |
+</div>
 
-### ML Inference API
+<table>
+<tr>
+<td width="50%" valign="top">
 
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| Framework | FastAPI | 0.111.0 |
-| Runtime | Python | 3.11.0 |
-| ML Framework | TensorFlow (CPU) | 2.16.1 |
-| Keras | tf-keras | 2.16.0 |
-| Image Processing | Pillow | 10.3.0 |
-| Server | Uvicorn (ASGI) | 0.29.0 |
-| Deployment | Render.com | — |
+### 🌐 Web Platform
 
----
+| Layer | Tech | Version |
+|-------|------|---------|
+| Framework | Next.js App Router | `16.1.6` |
+| Language | TypeScript (strict) | `5.x` |
+| Auth + DB | Firebase | `12.x` |
+| Email | Resend + React Email | `6.x` |
+| Analytics | GA4 + MS Clarity | `—` |
+| Feedback | Google Sheets API | `v4` |
+| PDFs | pdf-lib | `1.17.x` |
+| Deploy | Vercel | `—` |
+| CI/CD | GitHub Actions | `—` |
+| Node | `.nvmrc` pinned | `20` |
 
-## CI/CD Pipeline
+</td>
+<td width="50%" valign="top">
 
-Every change to this repository goes through an automated quality gate before it can reach production.
+### 🧠 ML Inference API
 
-```
-Push to branch
-      │
-      ▼
-┌─────────────────────────────────────┐
-│         GitHub Actions              │
-│                                     │
-│  1. npm ci          (clean install) │
-│  2. tsc --noEmit    (type check)    │
-│  3. eslint          (lint)          │
-│  4. next build      (build verify)  │
-│                                     │
-│  ALL must pass → merge allowed      │
-│  ANY failure   → merge blocked      │
-└─────────────────────────────────────┘
-      │
-      ▼ (on merge to master)
-┌─────────────────┐
-│  Vercel Deploy  │  → https://www.nivara.life
-└─────────────────┘
-```
+| Layer | Tech | Version |
+|-------|------|---------|
+| Framework | FastAPI | `0.111.0` |
+| Runtime | Python | `3.11.0` |
+| ML | TensorFlow CPU | `2.16.1` |
+| Keras | tf-keras | `2.16.0` |
+| Imaging | Pillow | `10.3.0` |
+| Server | Uvicorn (ASGI) | `0.29.0` |
+| Deploy | Render.com | `—` |
 
-**Branch protection** is enforced on `master`. Direct pushes are blocked. All changes require a Pull Request with a passing Quality Gate.
+</td>
+</tr>
+</table>
+
+<br/>
 
 ---
 
-## Project Structure
+<div align="center">
+
+## `⟳` CI/CD Pipeline
+
+</div>
+
+Every change goes through a **Quality Gate** before it can touch production. Direct pushes to `master` are blocked at the repository level.
 
 ```
-nivara/                             ← This repository (Web Platform)
-├── app/                            # Next.js App Router
-│   ├── page.tsx                    # Homepage
-│   ├── demo/                       # Scan demo (calls ML API)
-│   ├── features/                   # Technology page
-│   ├── doctors/                    # Doctor directory
-│   ├── results/                    # Scan results display
-│   ├── profile/                    # User profile
-│   ├── onboarding/                 # User onboarding
-│   ├── feedback/                   # Feedback form
-│   ├── kiosks/                     # Kiosk info
-│   ├── buy/                        # Early access
-│   ├── api/                        # API route handlers
-│   │   ├── email/                  # Transactional emails
-│   │   └── cron/                   # Scheduled jobs
-│   ├── admin/                      # Admin dashboard
-│   └── doctor/                     # Doctor portal
-├── components/                     # Shared React components
-├── lib/                            # Utilities & config
-│   ├── firebase.ts                 # Client Firebase
-│   ├── firebaseAdmin.ts            # Server Firebase Admin
-│   ├── email.ts                    # Resend email sender
-│   └── googleSheets.ts             # Sheets API
-├── emails/                         # React Email templates
-├── public/images/                  # Static assets
-├── scripts/                        # Seed & utility scripts
-├── .github/workflows/              # CI/CD pipeline
-├── .nvmrc                          # Node 20 pinned
-└── eslint.config.mjs               # ESLint flat config
-
-nivara-api/                         ← Separate repository (ML API)
-├── main.py                         # FastAPI app + model inference
-├── skin_disease_model22.h5         # Trained CNN-GRU weights
-├── requirements.txt                # Python dependencies
-├── runtime.txt                     # Python 3.11.0
-└── Render.yaml                     # Render.com deployment config
+  ┌──────────┐     git push      ┌─────────────────────────────────────┐
+  │ dev      │ ────────────────► │         GitHub Actions               │
+  │ branch   │                   │                                     │
+  └──────────┘                   │  ① npm ci          install clean    │
+        ▲                        │  ② tsc --noEmit    type safety      │
+        │                        │  ③ eslint          code quality     │
+   PR required                   │  ④ next build      build integrity  │
+        │                        │                                     │
+  ┌─────┴────┐                   │  ALL pass  →  merge unlocked  ✅    │
+  │ master   │ ◄── merge ──────  │  ANY fail  →  merge blocked   🔴    │
+  └──────────┘                   └─────────────────────────────────────┘
+        │                                         │
+        │  on merge                               │  auto-cancelled on
+        ▼                                         │  new push (concurrency)
+  ┌──────────┐
+  │  Vercel  │ ──► https://www.nivara.life  🚀
+  └──────────┘
 ```
+
+<details>
+<summary><b>📋 What each check does</b></summary>
+
+<br/>
+
+| Step | Command | What It Catches |
+|------|---------|-----------------|
+| **Install** | `npm ci` | Lockfile drift, missing packages |
+| **Type Check** | `tsc --noEmit` | Type errors, missing props, bad imports |
+| **Lint** | `eslint` | Code quality, unused vars, hook violations |
+| **Build** | `next build` | Runtime errors, broken routes, missing env |
+| **Verify** | `test -d .next` | Build output existence confirmed |
+
+</details>
+
+<details>
+<summary><b>🔐 Secrets managed in pipeline</b></summary>
+
+<br/>
+
+```
+NEXT_PUBLIC_FIREBASE_API_KEY          NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+NEXT_PUBLIC_FIREBASE_PROJECT_ID       NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+NEXT_PUBLIC_FIREBASE_MESSAGING_ID     NEXT_PUBLIC_FIREBASE_APP_ID
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID   RESEND_API_KEY
+RESEND_FROM                           NEXT_PUBLIC_APP_URL
+CRON_SECRET                           GOOGLE_SHEETS_ID
+GOOGLE_SERVICE_ACCOUNT_EMAIL          GOOGLE_PRIVATE_KEY
+```
+
+All 14 secrets stored as GitHub Actions repository secrets. Never committed.
+
+</details>
+
+<br/>
 
 ---
 
-## Getting Started
+<div align="center">
+
+## `◱` Project Structure
+
+</div>
+
+```
+NIVARA_PROD/                            ← Web Platform (this repo)
+│
+├── app/                                # Next.js App Router
+│   ├── page.tsx                        # ↳ Homepage
+│   ├── demo/                           # ↳ Scan demo  (calls ML API)
+│   ├── features/                       # ↳ Technology page
+│   ├── doctors/                        # ↳ Doctor directory
+│   │   └── [id]/                       # ↳ Individual doctor profiles
+│   ├── results/                        # ↳ Scan results display
+│   ├── profile/                        # ↳ User profile
+│   ├── onboarding/                     # ↳ New user onboarding
+│   ├── feedback/                       # ↳ Feedback form
+│   ├── kiosks/                         # ↳ Kiosk information
+│   ├── buy/                            # ↳ Early access signup
+│   ├── api/                            # ↳ Server-side API routes
+│   │   ├── email/                      #   ↳ Transactional emails (Resend)
+│   │   └── cron/                       #   ↳ Scheduled jobs
+│   ├── admin/                          # ↳ Internal admin dashboard
+│   └── doctor/                         # ↳ Doctor portal
+│
+├── components/                         # Shared React components
+├── lib/                                # Utilities & config
+│   ├── firebase.ts                     # ↳ Client-side Firebase
+│   ├── firebaseAdmin.ts                # ↳ Server-side Admin SDK
+│   ├── email.ts                        # ↳ Resend sender wrapper
+│   └── googleSheets.ts                 # ↳ Sheets API client
+├── emails/                             # React Email templates
+├── public/images/                      # Static assets
+├── scripts/                            # Seed & utility scripts
+├── .github/workflows/                  # CI/CD definitions
+├── .nvmrc                              # Node 20 pinned
+└── eslint.config.mjs                   # ESLint flat config
+
+nivara-api/                             ← ML Inference API (separate repo)
+├── main.py                             # FastAPI app + inference logic
+├── skin_disease_model22.h5             # Trained CNN-GRU weights
+├── requirements.txt                    # Python dependencies
+├── runtime.txt                         # python-3.11.0
+└── Render.yaml                         # Render.com deploy config
+```
+
+<br/>
+
+---
+
+<div align="center">
+
+## `▷` Getting Started
+
+</div>
 
 ### Prerequisites
 
-- Node.js 20+ (use `.nvmrc` with `nvm use`)
-- npm
-- Firebase project
-- Resend account
-- Google Cloud service account (for Sheets)
+```
+Node.js 20+   (nvm use — reads .nvmrc automatically)
+npm
+Firebase project with Auth + Firestore enabled
+Resend account (for transactional email)
+Google Cloud service account with Sheets API access
+```
 
 ### Installation
 
 ```bash
-# Clone the repository
+# Clone
 git clone https://github.com/Dixith-ai/NIVARA_PROD.git
 cd NIVARA_PROD
 
-# Install dependencies
-npm install
+# Install (respects lockfile)
+npm ci
 
-# Set up environment variables
+# Environment
 cp .env.local.example .env.local
-# Fill in all values in .env.local
+# fill in all 14 values
 
-# Start development server
+# Run
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+→ [http://localhost:3000](http://localhost:3000)
+
+### Scripts
+
+```bash
+npm run dev           # Development server  (hot reload)
+npm run build         # Production build
+npm run start         # Production server
+npm run typecheck     # tsc --noEmit
+npm run lint          # ESLint
+```
 
 ### Environment Variables
 
 ```bash
-# Firebase (Client)
+# ─── Firebase Client ────────────────────────────────────────────────────────
 NEXT_PUBLIC_FIREBASE_API_KEY=
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=
@@ -306,86 +447,128 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
 NEXT_PUBLIC_FIREBASE_APP_ID=
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 
-# Email (Resend)
+# ─── Email ──────────────────────────────────────────────────────────────────
 RESEND_API_KEY=
 RESEND_FROM=
 
-# App
+# ─── App ────────────────────────────────────────────────────────────────────
 NEXT_PUBLIC_APP_URL=
 
-# Cron Security
+# ─── Security ───────────────────────────────────────────────────────────────
 CRON_SECRET=
 
-# Google Sheets (Feedback logging)
+# ─── Google Sheets ──────────────────────────────────────────────────────────
 GOOGLE_SHEETS_ID=
 GOOGLE_SERVICE_ACCOUNT_EMAIL=
 GOOGLE_PRIVATE_KEY=
 ```
 
-### Available Scripts
+<br/>
+
+---
+
+<div align="center">
+
+## `⟡` Contributing
+
+</div>
+
+This is a private repository. All changes to `master` require a PR. The Quality Gate must pass.
 
 ```bash
-npm run dev          # Start development server
-npm run build        # Production build
-npm run start        # Start production server
-npm run typecheck    # TypeScript type check
-npm run lint         # ESLint
+# 1. Branch
+git checkout -b feature/your-feature
+
+# 2. Build confidence locally before pushing
+npm run typecheck && npm run lint && npm run build
+
+# 3. Push
+git push origin feature/your-feature
+
+# 4. Open PR on GitHub → wait for ✅ Quality Gate
+# 5. Merge → Vercel deploys automatically
 ```
 
----
+**Branch naming convention**
 
-## Contributing
+```
+feature/   →  new functionality
+fix/       →  bug fixes
+chore/     →  maintenance, deps
+ci/        →  pipeline changes
+ml/        →  model or API changes
+docs/      →  documentation only
+```
 
-This is a private repository. To contribute:
-
-1. **Branch** off `master` with a descriptive name
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. **Make your changes** and test locally
-   ```bash
-   npm run typecheck && npm run lint && npm run build
-   ```
-
-3. **Push** and open a Pull Request
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-4. **Wait** for the Quality Gate to pass — all 4 checks must be green
-
-5. **Merge** once approved
-
-Branch naming: `feature/` · `fix/` · `chore/` · `ci/` · `ml/`
+<br/>
 
 ---
 
-## Team
+<div align="center">
 
-| Name | Title |
-|------|-------|
-| **Karthik H S** | ML Engineer & Frontend Engineer |
-| **Pratham Limbani** | ML Engineer & Product |
-| **Dixith Adithya** | Full Stack Engineer & IoT Architect |
-| **Chethan** | Operations, Deployment & IoT |
-| **Mufeez** | Research & Clinical Validation |
+## `◉` Team
+
+</div>
+
+<table>
+<tr>
+<td align="center" width="20%">
+<br/>
+<b>Karthik H S</b><br/>
+<sub>ML Engineer &<br/>Frontend Engineer</sub>
+</td>
+<td align="center" width="20%">
+<br/>
+<b>Dixith Adithya</b><br/>
+<sub>Full Stack Engineer &<br/>IoT Architect</sub>
+</td>
+<td align="center" width="20%">
+<br/>
+<b>Mufeez</b><br/>
+<sub>Research &<br/>Clinical Validation</sub>
+</td>
+<td align="center" width="20%">
+<br/>
+<b>Pratham Limbani</b><br/>
+<sub>ML Engineer &<br/>Product</sub>
+</td>
+<td align="center" width="20%">
+<br/>
+<b>Chethan</b><br/>
+<sub>Operations,<br/>Deployment & IoT</sub>
+</td>
+</tr>
+</table>
+
+<br/>
 
 ---
 
-## Deployment
+<div align="center">
 
-| Service | Platform | Repository | URL |
-|---------|----------|-----------|-----|
-| Web Platform | Vercel | `NIVARA_PROD` | [nivara.life](https://www.nivara.life) |
-| ML Inference API | Render.com | `nivara-api` | `nivara-skin-api` on Render |
+## `⬡` Deployment
 
-Every merge to `master` in this repo triggers an automatic Vercel production deployment.
-The ML API is deployed independently on Render.com from the `nivara-api` repository.
+</div>
+
+| Service | Platform | Repo | Environment | URL |
+|---------|----------|------|-------------|-----|
+| Web Platform | Vercel | `NIVARA_PROD` | Production | [nivara.life](https://www.nivara.life) |
+| Web Platform | Vercel | `NIVARA_PROD` | Preview | auto per PR |
+| ML Inference API | Render.com | `nivara-api` | Production | `nivara-skin-api` |
+
+Every merge to `master` → automatic Vercel production deploy.
+Every PR → automatic Vercel preview deploy.
+ML API is deployed independently from `nivara-api`.
+
+<br/>
 
 ---
 
-## License
+<div align="center">
+
+## `§` License
+
+</div>
 
 Copyright © 2026 NIVARA Health Technology. All rights reserved.
 
@@ -393,20 +576,17 @@ This repository contains proprietary and confidential source code. Unauthorised 
 
 ---
 
-<div align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=120&section=footer&text=nivara.life&fontSize=24&fontColor=C4973A&fontAlignY=65&animation=fadeIn">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=120&section=footer&text=nivara.life&fontSize=24&fontColor=C4973A&fontAlignY=65&animation=fadeIn" width="100%" alt="footer">
+</picture>
 
-<br/>
+<div align="center">
 
 ```
 निवार  ·  NIVARA  ·  नि + वार  ·  Prevention + Strike
 ```
 
 *Precision skin health technology. Indigenously crafted in India.*
-
-<br/>
-
-**[nivara.life](https://www.nivara.life)**
-
-<br/>
 
 </div>
