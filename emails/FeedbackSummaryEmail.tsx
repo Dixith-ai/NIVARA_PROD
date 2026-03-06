@@ -224,7 +224,7 @@ export default function FeedbackSummaryEmail(payload: FeedbackPayload) {
 
                     <QRow
                         label="Q16 — 1 to 10: how much do you trust NIVARA vs a real dermatologist?"
-                        selected={payload.q16_trust_score != null ? payload.q16_trust_score : null}
+                        selected={payload.q16_trust_score !== null ? payload.q16_trust_score : null}
                         detail={payload.q16_detail}
                     />
                     <QRow

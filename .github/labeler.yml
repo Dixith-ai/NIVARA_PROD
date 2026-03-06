@@ -1,0 +1,47 @@
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - app/**/*.tsx
+          - app/**/*.module.css
+          - components/**/*.tsx
+
+api:
+  - changed-files:
+      - any-glob-to-any-file:
+          - app/api/**
+
+config:
+  - changed-files:
+      - any-glob-to-any-file:
+          - next.config.*
+          - tsconfig.json
+          - package.json
+          - .env.local.example
+
+styles:
+  - changed-files:
+      - any-glob-to-any-file:
+          - app/globals.css
+          - "**/*.module.css"
+
+firebase:
+  - changed-files:
+      - any-glob-to-any-file:
+          - lib/firebase*.ts
+          - lib/firebaseAdmin.ts
+
+email:
+  - changed-files:
+      - any-glob-to-any-file:
+          - lib/email.ts
+          - emails/**
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/**
+
+scripts:
+  - changed-files:
+      - any-glob-to-any-file:
+          - scripts/**

@@ -7,9 +7,9 @@ export default function ClarityScript() {
         if (typeof window === 'undefined') return;
         (function (c: Window & typeof globalThis, l: Document, a: string, r: string, i: string) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (c as any)[a] = (c as any)[a] || function () {
+            (c as any)[a] = (c as any)[a] || function (...args: unknown[]) {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                ((c as any)[a].q = (c as any)[a].q || []).push(arguments);
+                ((c as any)[a].q = (c as any)[a].q || []).push(args);
             };
             const t = l.createElement(r) as HTMLScriptElement;
             t.async = true;
