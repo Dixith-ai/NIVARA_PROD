@@ -13,10 +13,10 @@ export function initCanny() {
         f.parentNode?.insertBefore(e, f)
       }
     }
-    if (typeof (w as any).Canny !== 'function') {
-      const c = function (...args: any[]) { c.q.push(args) }
-      c.q = [] as any[]
-      ;(w as any).Canny = c
+    if (typeof (w as unknown as { Canny?: unknown }).Canny !== 'function') {
+      const c = function (...args: unknown[]) { c.q.push(args) }
+      c.q = [] as unknown[]
+      ;(w as unknown as { Canny: typeof c }).Canny = c
       if (d.readyState === 'loading') {
         d.addEventListener('DOMContentLoaded', l)
       } else {
