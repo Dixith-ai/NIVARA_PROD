@@ -9,7 +9,7 @@
 
 ```
 नि + वार  ═══  Prevention + Strike
-``
+```
 
 <br/>
 
