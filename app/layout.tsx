@@ -12,6 +12,7 @@ import FeedbackWidget from '@/components/FeedbackWidget';
 import { AuthProvider } from '@/context/AuthContext';
 import PostHogProvider from '@/components/PostHogProvider';
 import MixpanelProvider from '@/components/MixpanelProvider';
+import CannyProvider from '@/components/CannyProvider';
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -49,14 +50,16 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <PostHogProvider>
             <MixpanelProvider>
-              <AuthProvider>
-                <ConditionalNavbar />
-                {children}
-                <CursorGlow />
-                <ScrollReveal />
-                <ClarityScript />
-                <FeedbackWidget />
-              </AuthProvider>
+              <CannyProvider>
+                <AuthProvider>
+                  <ConditionalNavbar />
+                  {children}
+                  <CursorGlow />
+                  <ScrollReveal />
+                  <ClarityScript />
+                  <FeedbackWidget />
+                </AuthProvider>
+              </CannyProvider>
             </MixpanelProvider>
           </PostHogProvider>
         </Suspense>
