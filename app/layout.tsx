@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { DM_Serif_Display, Cormorant_Garamond, Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
@@ -44,16 +45,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${cormorant.variable} ${inter.variable}`}>
       <body>
-        <PostHogProvider>
-          <AuthProvider>
-            <ConditionalNavbar />
-            {children}
-            <CursorGlow />
-            <ScrollReveal />
-            <ClarityScript />
-            <FeedbackWidget />
-          </AuthProvider>
-        </PostHogProvider>
+        <Suspense fallback={null}>
+          <PostHogProvider>
+            <AuthProvider>
+              <ConditionalNavbar />
+              {children}
+              <CursorGlow />
+              <ScrollReveal />
+              <ClarityScript />
+              <FeedbackWidget />
+            </AuthProvider>
+          </PostHogProvider>
+        </Suspense>
         <Analytics />
       </body>
       <GoogleAnalytics gaId="G-7PDC21ZWW5" />
