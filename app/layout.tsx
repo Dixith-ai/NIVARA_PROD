@@ -9,6 +9,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import ClarityScript from '@/components/ClarityScript';
 import FeedbackWidget from '@/components/FeedbackWidget';
 import { AuthProvider } from '@/context/AuthContext';
+import PostHogProvider from '@/components/PostHogProvider';
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -43,14 +44,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${cormorant.variable} ${inter.variable}`}>
       <body>
-        <AuthProvider>
-          <ConditionalNavbar />
-          {children}
-          <CursorGlow />
-          <ScrollReveal />
-          <ClarityScript />
-          <FeedbackWidget />
-        </AuthProvider>
+        <PostHogProvider>
+          <AuthProvider>
+            <ConditionalNavbar />
+            {children}
+            <CursorGlow />
+            <ScrollReveal />
+            <ClarityScript />
+            <FeedbackWidget />
+          </AuthProvider>
+        </PostHogProvider>
         <Analytics />
       </body>
       <GoogleAnalytics gaId="G-7PDC21ZWW5" />
