@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { DM_Serif_Display, Cormorant_Garamond, Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
@@ -9,6 +10,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import ClarityScript from '@/components/ClarityScript';
 import FeedbackWidget from '@/components/FeedbackWidget';
 import { AuthProvider } from '@/context/AuthContext';
+import PostHogProvider from '@/components/PostHogProvider';
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -43,14 +45,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSerif.variable} ${cormorant.variable} ${inter.variable}`}>
       <body>
-        <AuthProvider>
-          <ConditionalNavbar />
-          {children}
-          <CursorGlow />
-          <ScrollReveal />
-          <ClarityScript />
-          <FeedbackWidget />
-        </AuthProvider>
+        <Suspense fallback={null}>
+          <PostHogProvider>
+            <AuthProvider>
+              <ConditionalNavbar />
+              {children}
+              <CursorGlow />
+              <ScrollReveal />
+              <ClarityScript />
+              <FeedbackWidget />
+            </AuthProvider>
+          </PostHogProvider>
+        </Suspense>
         <Analytics />
       </body>
       <GoogleAnalytics gaId="G-7PDC21ZWW5" />
