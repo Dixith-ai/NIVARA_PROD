@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { DM_Serif_Display, Cormorant_Garamond, Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import ConditionalNavbar from '@/components/ConditionalNavbar';
 import CursorGlow from '@/components/CursorGlow';
@@ -50,6 +51,7 @@ export default function RootLayout({
           <ClarityScript />
           <FeedbackWidget />
         </AuthProvider>
+        <Analytics />
       </body>
       <GoogleAnalytics gaId="G-7PDC21ZWW5" />
     </html>
