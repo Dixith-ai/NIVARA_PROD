@@ -11,6 +11,7 @@ import ClarityScript from '@/components/ClarityScript';
 import FeedbackWidget from '@/components/FeedbackWidget';
 import { AuthProvider } from '@/context/AuthContext';
 import PostHogProvider from '@/components/PostHogProvider';
+import MixpanelProvider from '@/components/MixpanelProvider';
 
 const dmSerif = DM_Serif_Display({
   subsets: ['latin'],
@@ -47,14 +48,16 @@ export default function RootLayout({
       <body>
         <Suspense fallback={null}>
           <PostHogProvider>
-            <AuthProvider>
-              <ConditionalNavbar />
-              {children}
-              <CursorGlow />
-              <ScrollReveal />
-              <ClarityScript />
-              <FeedbackWidget />
-            </AuthProvider>
+            <MixpanelProvider>
+              <AuthProvider>
+                <ConditionalNavbar />
+                {children}
+                <CursorGlow />
+                <ScrollReveal />
+                <ClarityScript />
+                <FeedbackWidget />
+              </AuthProvider>
+            </MixpanelProvider>
           </PostHogProvider>
         </Suspense>
         <Analytics />
