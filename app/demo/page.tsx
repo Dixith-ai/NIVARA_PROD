@@ -10,6 +10,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { saveScan, getUserProfile, getLatestScan, getSeverity } from '@/lib/firestore';
 import type { ScanRecord } from '@/types/scan';
+import { hasUnlimitedDemoAccess } from '@/lib/demoWhitelist';
 
 /* ══════════════════════════════════════════════
    TYPES & CONSTANTS
@@ -137,9 +138,15 @@ export default function DemoPage() {
             setDemoState('gate');
             return;
         }
-        // User is logged in — check if they already used the demo
+        // User is logged in — check if they have unlimited access or already used the demo
         (async () => {
             try {
+                // Check whitelist first
+                if (hasUnlimitedDemoAccess(user.email)) {
+                    setDemoState('idle');
+                    return;
+                }
+                
                 const profile = await getUserProfile(user.uid);
                 const demoUsed = !!(profile as { demoScanUsed?: boolean } | null)?.demoScanUsed;
                 if (demoUsed) {
@@ -268,9 +275,12 @@ export default function DemoPage() {
                         localStorage.setItem('nivara_last_scan', JSON.stringify(scanRecord));
                         if (user) {
                             await saveScan(user.uid, scanRecord);
-                            await updateDoc(doc(db, 'users', user.uid), {
-                                demoScanUsed: true,
-                            });
+                            // Only mark as used if not on whitelist
+                            if (!hasUnlimitedDemoAccess(user.email)) {
+                                await updateDoc(doc(db, 'users', user.uid), {
+                                    demoScanUsed: true,
+                                });
+                            }
                             // Fire scan-report email — non-blocking
                             if (user.email) {
                                 const fn = (await getUserProfile(user.uid) as { fullName?: string } | null)?.fullName?.split(' ')[0] || 'there';
